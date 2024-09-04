@@ -88,6 +88,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      mathjax: true  # Add this line to enable MathJax for _pages
   # _projects
   - scope:
       path: ""
@@ -147,7 +148,4 @@ kramdown:
   math_engine: mathjax
 
 # MathJax configuration
-mathjax:
-  enable: true
-  combo: "tex-svg"
-  tags: "ams"
+mathjax: true
