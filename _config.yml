@@ -15,7 +15,7 @@
 # https://learnxinyminutes.com/docs/yaml/
 #
 # Site settings
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
@@ -118,6 +118,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-remote-theme  # Add this line if it's not already there
 
 # Exclude from processing.
 # The following items will not be processed, by default.
