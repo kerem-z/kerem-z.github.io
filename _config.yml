@@ -28,7 +28,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  kerem-z
 
-<<<<<<< HEAD
 # Theme settings
 theme: minimal-mistakes
 minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
@@ -118,8 +117,6 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-=======
->>>>>>> 69e3b18f4a8c4e4b3dcaf7543d7c47b5b4d3909f
 
 # Build settings
 theme: minima
