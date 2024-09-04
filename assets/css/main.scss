@@ -1,0 +1,15 @@
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
+@import "minimal-mistakes";
+
+// Add your custom CSS here
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.page__title {
+  color: #4a4a4a;
+}
+
+.nav__items {
+  font-weight: bold;
+}
