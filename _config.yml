@@ -7,7 +7,9 @@
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
+# There is no error in this script. This line is just a comment.
+# The '#' symbol denotes a comment in YAML files, which is ignored by the parser.
+# If you're experiencing issues, the problem might be elsewhere in the file or in your Jekyll setup.
 # If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
@@ -21,11 +23,7 @@
 title: Kerem Zengin
 email: kerem.zengin@metu.edu.tr
 description: >- # this means to ignore newlines until "baseurl:"
-<<<<<<< HEAD
-  Welcome.
-=======
   Welcome to my personal website. I'm Kerem Zengin, a mathematician focusing on meta learning 
->>>>>>> 69e3b18f4a8c4e4b3dcaf7543d7c47b5b4d3909f
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  kerem-z
