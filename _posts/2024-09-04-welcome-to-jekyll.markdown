@@ -4,7 +4,7 @@ title:  "Von Neumann Arch"
 date:   2024-09-04 13:45:40 +0300
 categories: jekyll update
 ---
-You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+
 
 Von Neumann architecture, a fundamental concept in computer science, has several key components that can be considered as artifacts:
 
@@ -24,7 +24,18 @@ In the context of AI, these architectural elements have influenced the design of
 AI has also introduced new paradigms that extend beyond the von Neumann architecture, such as:
 
 1. Parallel processing: Utilizing multiple cores or GPUs for faster computation.
+
+Note: Markdown (md) can render LaTeX code, but it requires additional setup:
+
+1. Use a Markdown processor that supports LaTeX rendering, like MathJax or KaTeX.
+2. Include the necessary JavaScript libraries in your Jekyll configuration.
+3. Ensure your Markdown flavor (e.g., kramdown) is configured to recognize LaTeX delimiters.
+
+For example, to enable MathJax in Jekyll, add this to your `_config.yml`:
 2. Distributed computing: Spreading computations across multiple machines.
+
+markdown: >-
+  mathjax: true
 3. Neuromorphic computing: Designing hardware to mimic biological neural systems.
 
 These advancements aim to overcome limitations of the von Neumann architecture, particularly the "von Neumann bottleneck" between processing and memory units, to better suit the needs of modern AI applications.
