@@ -3,9 +3,9 @@ main:
     url: /about/
   - title: "Projects"
     url: /projects/
-  - title: "Publications"
-    url: /publications/
+  #- title: "Publications"
+   # url: /publications/
   - title: "Blog"
     url: /blog/
-  - title: "CV"
-    url: /cv/
+  #- title: "CV"
+   # url: /cv/
