@@ -145,3 +145,9 @@ plugins:
 markdown: kramdown
 kramdown:
   math_engine: mathjax
+
+# MathJax configuration
+mathjax:
+  enable: true
+  combo: "tex-svg"
+  tags: "ams"
