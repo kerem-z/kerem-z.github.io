@@ -1,63 +1,37 @@
 ---
 layout: post
-title:  "Von Neumann Arch"
+title:  "Lorem Ipsum Dolor Sit Amet"
 date:   2024-09-04 13:45:40 +0300
 categories: jekyll update
 ---
+Here are some mathematical formulas to test LaTeX rendering on GitHub Pages:
+
+1. The quadratic formula:
+
+   $$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
+
+2. Einstein's famous mass-energy equivalence:
+
+   $$ E = mc^2 $$
+
+3. The Pythagorean theorem:
+
+   $$ a^2 + b^2 = c^2 $$
+
+4. The definition of the derivative:
+
+   $$ f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} $$
+
+5. Euler's identity:
+
+   $$ e^{i\pi} + 1 = 0 $$
+
+6. The normal distribution probability density function:
+
+   $$ f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2} $$
+
+These formulas should render properly if LaTeX support is correctly configured in your GitHub Pages setup.
 
 
-Von Neumann architecture, a fundamental concept in computer science, has several key components that can be considered as artifacts:
 
-1. Control Unit (CU): Manages and coordinates the computer's operations.
-2. Arithmetic Logic Unit (ALU): Performs mathematical and logical operations.
-3. Memory Unit: Stores both data and instructions.
-4. Input/Output (I/O) Devices: Allow communication with the external world.
-5. Bus System: Facilitates data transfer between components.
-
-In the context of AI, these architectural elements have influenced the design of neural networks and machine learning models:
-
-1. The concept of stored programs in memory relates to how AI models store learned parameters.
-2. The ALU's role is similar to activation functions in neural networks.
-3. The bus system is analogous to the connections between neurons in AI models.
-4. The control unit's function is comparable to the training algorithms that guide AI learning processes.
-
-AI has also introduced new paradigms that extend beyond the von Neumann architecture, such as:
-
-1. Parallel processing: Utilizing multiple cores or GPUs for faster computation.
-
-Note: Markdown (md) can render LaTeX code, but it requires additional setup:
-
-1. Use a Markdown processor that supports LaTeX rendering, like MathJax or KaTeX.
-2. Include the necessary JavaScript libraries in your Jekyll configuration.
-3. Ensure your Markdown flavor (e.g., kramdown) is configured to recognize LaTeX delimiters.
-
-For example, to enable MathJax in Jekyll, add this to your `_config.yml`:
-2. Distributed computing: Spreading computations across multiple machines.
-
-markdown: >-
-  mathjax: true
-3. Neuromorphic computing: Designing hardware to mimic biological neural systems.
-
-These advancements aim to overcome limitations of the von Neumann architecture, particularly the "von Neumann bottleneck" between processing and memory units, to better suit the needs of modern AI applications.
-
-We can also use LaTeX to display equations. For example, here's the equation for a simple neural network:
-
-$$ y = \sigma(\sum_{i=1}^n w_i x_i + b) $$
-
-Where:
-- $y$ is the output
-- $\sigma$ is the activation function
-- $w_i$ are the weights
-- $x_i$ are the inputs
-- $b$ is the bias
-
-And here's the backpropagation algorithm in matrix form:
-
-$$ \frac{\partial E}{\partial W^{(l)}} = \delta^{(l+1)} (a^{(l)})^T $$
-
-Where:
-- $E$ is the error function
-- $W^{(l)}$ is the weight matrix for layer $l$
-- $\delta^{(l+1)}$ is the error term for layer $l+1$
-- $a^{(l)}$ is the activation for layer $l$
 
