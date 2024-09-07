@@ -1,5 +1,5 @@
 ---
-title: "Current Research"
+title: "Current Projects"
 permalink: /projects/
 layout: single
 author_profile: true

@@ -31,13 +31,13 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  kerem-z
 
 # Theme settings
-minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "aqua" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Author
 author:
   name             : "Kerem Zengin"
   avatar           : "/assets/images/bio-photo.jpg"
-  bio              : "None"
+  bio              : "doing some stuff"
   location         : "Middle East Technical University"
   links:
     - label: "Email"
@@ -57,6 +57,7 @@ footer:
 # Reading Files
 include:
   - _pages
+  
 
 # Collections
 collections:

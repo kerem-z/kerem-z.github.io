@@ -1,5 +1,5 @@
 ---
-title: "Stochastic ODEs and AI Integration for Stock Price Prediction"
+title: "Stochastic Differential Equation and AI(?) Integration for Stock Price Prediction"
 excerpt: "Exploring the intersection of stochastic differential equations and artificial intelligence"
 header:
   teaser: /assets/images/project-teaser.jpg
