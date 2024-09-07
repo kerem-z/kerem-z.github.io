@@ -3,6 +3,7 @@ layout: post
 title:  "Lorem Ipsum Dolor Sit Amet"
 date:   2024-09-04 13:45:40 +0300
 categories: jekyll update
+use_math: true
 ---
 Here are some mathematical formulas to test LaTeX rendering on GitHub Pages:
 
