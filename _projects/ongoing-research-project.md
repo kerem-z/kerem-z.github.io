@@ -4,11 +4,6 @@ excerpt: "Exploring the intersection of stochastic differential equations and ar
 use_math: true
 ---
 
-
-# Stochastic ODEs and AI Integration for Stock Price Prediction
-
-This research project focuses on combining stochastic ordinary differential equations (ODEs) with artificial intelligence techniques to predict stock prices.
-
 ## Key Concepts
 
 1. **Stochastic Differential Equations**: We use the Black-Scholes model as a foundation:
