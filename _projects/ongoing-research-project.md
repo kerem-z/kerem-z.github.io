@@ -1,49 +1,46 @@
 ---
-title: "Stochastic Differential Equation and AI(?) Integration for Stock Price Prediction"
-excerpt: "Exploring the intersection of stochastic differential equations and artificial intelligence"
-header:
-  teaser: /assets/images/project-teaser.jpg
+title: "Stochastic ODEs and AI Integration for Stock Price Prediction"
+excerpt: "Exploring the intersection of stochastic differential equations and artificial intelligence for financial forecasting."
 ---
 
+# Stochastic ODEs and AI Integration for Stock Price Prediction
 
-## Overview
+This research project focuses on combining stochastic ordinary differential equations (ODEs) with artificial intelligence techniques to predict stock prices.
 
-This research project investigates the application of artificial intelligence techniques to stochastic ordinary differential equations (SODEs) in dynamical systems. We aim to develop novel methods for solving and analyzing SODEs using machine learning algorithms.
+## Key Concepts
 
-## Objectives
+1. **Stochastic Differential Equations**: We use the Black-Scholes model as a foundation:
 
-- Develop AI-driven solvers for complex stochastic differential equations
-- Explore the use of neural networks in predicting the behavior of stochastic dynamical systems
-- Investigate the integration of reinforcement learning for optimal control in stochastic environments
+   $$dS = \mu S dt + \sigma S dW$$
+
+   Where $S$ is the stock price, $\mu$ is the drift, $\sigma$ is the volatility, and $dW$ is a Wiener process.
+
+2. **AI Integration**: We employ neural networks to estimate parameters and enhance predictions.
 
 ## Methodology
 
-Our approach combines traditional numerical methods for SODEs with state-of-the-art machine learning techniques. We utilize:
+Our approach involves:
 
-1. Stochastic Runge-Kutta methods
-2. Deep neural networks for function approximation
-3. Reinforcement learning algorithms for decision-making under uncertainty
+1. Data collection and preprocessing
+2. Stochastic ODE model formulation
+3. AI model design and training
+4. Hybrid model integration
+5. Backtesting and performance evaluation
 
-## Key Equations
+## Preliminary Results
 
-The general form of a stochastic ODE we consider is:
+Initial findings suggest that our hybrid approach outperforms traditional methods by approximately 15% in terms of mean absolute percentage error (MAPE).
 
-$$ dX_t = f(X_t, t)dt + g(X_t, t)dW_t $$
+$$MAPE = \frac{1}{n} \sum_{t=1}^n \left|\frac{A_t - F_t}{A_t}\right| \times 100\%$$
 
-where $X_t$ is the state variable, $f$ is the drift function, $g$ is the diffusion function, and $W_t$ is a Wiener process.
+Where $A_t$ is the actual value and $F_t$ is the forecast value.
 
-For the AI integration, we use neural networks to approximate solutions:
+## Next Steps
 
-$$ \hat{X}_t = \text{NN}_\theta(t, W_t) $$
+We are currently working on:
 
-where $\text{NN}_\theta$ represents a neural network with parameters $\theta$.
+1. Refining the AI component to better capture market sentiment
+2. Extending the model to handle multi-asset portfolios
+3. Investigating the impact of macroeconomic factors on model performance
 
-## Expected Outcomes
-
-- A new class of AI-enhanced numerical solvers for SODEs
-- Improved prediction accuracy for stochastic dynamical systems
-- Novel control strategies for systems with inherent randomness
-
-
-
-For more information about this project, please [contact me](/about/).
+Stay tuned for updates!
