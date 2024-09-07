@@ -31,7 +31,11 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  kerem-z
 
 # Theme settings
-minimal_mistakes_skin: "aqua" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "mint" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+
 
 # Site Author
 author:
@@ -98,6 +102,7 @@ defaults:
       layout: single
       author_profile: false
       share: true 
+      mathjax: true
   # _publications
   - scope:
       path: ""

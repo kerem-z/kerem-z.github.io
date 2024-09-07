@@ -5,7 +5,6 @@ header:
   teaser: /assets/images/project-teaser.jpg
 ---
 
-# Stochastic ODEs and AI Integration in Dynamical Systems
 
 ## Overview
 
