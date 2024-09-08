@@ -8,7 +8,6 @@ entries_layout: grid
 classes: wide
 mathjax: true
 use_math: true
-classes: wide
 header:
   overlay_color: "#005"
   overlay_filter: "0.5"
@@ -18,7 +17,8 @@ excerpt: "Explore my thoughts, research findings, and insights on various topics
 ---
 
 <div class="grid__wrapper">
-  {% for post in site.posts %}
+  {% assign unique_posts = site.posts | uniq %}
+  {% for post in unique_posts %}
     {% include archive-single.html type="grid" %}
   {% endfor %}
 </div>
