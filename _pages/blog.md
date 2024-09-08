@@ -7,6 +7,8 @@ author_profile: true
 entries_layout: grid
 classes: wide
 mathjax: true
+use_math: true
+classes: wide
 header:
   overlay_color: "#005"
   overlay_filter: "0.5"
