@@ -2,6 +2,7 @@
 title: "Stochastic ODEs and AI Integration for Stock Price Prediction"
 excerpt: "Exploring the intersection of stochastic differential equations and artificial intelligence for financial forecasting."
 use_math: true
+mathjax: true
 ---
 
 ## Key Concepts
