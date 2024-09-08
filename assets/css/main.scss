@@ -27,3 +27,20 @@ body {
 }
 
 // Add more custom styles as needed
+
+.grid__item {
+  .archive__item-teaser {
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .archive__item-title {
+    font-size: 1.2em;
+    margin-top: 0.5em;
+  }
+  
+  .archive__item-excerpt {
+    font-size: 0.9em;
+    margin-top: 0.5em;
+  }
+}

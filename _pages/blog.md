@@ -1,11 +1,21 @@
 ---
-layout: archive
+layout: collection
 title: "Blog Posts"
+collection: posts
 permalink: /blog/
 author_profile: true
-mathjax: true
+entries_layout: grid
+classes: wide
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  overlay_image: /assets/images/blog-header.jpg
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+excerpt: "Explore my thoughts, research findings, and insights on various topics."
 ---
 
-{% for post in site.posts %}
-  {% include archive-single.html %}
-{% endfor %}
+<div class="grid__wrapper">
+  {% for post in site.posts %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
