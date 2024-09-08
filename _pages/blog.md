@@ -6,11 +6,12 @@ permalink: /blog/
 author_profile: true
 entries_layout: grid
 classes: wide
+mathjax: true
 header:
-  overlay_color: "#000"
+  overlay_color: "#005"
   overlay_filter: "0.5"
   overlay_image: /assets/images/blog-header.jpg
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  
 excerpt: "Explore my thoughts, research findings, and insights on various topics."
 ---
 
