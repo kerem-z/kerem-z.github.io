@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Blog Posts"
+title: " "
 collection: posts
 permalink: /blog/
 author_profile: true
