@@ -8,9 +8,6 @@ entries_layout: grid
 classes: wide
 mathjax: true
 use_math: true
-header:
-  overlay_color: "#005"
-  overlay_filter: "0.5"
  
   
 excerpt: "Some Thoughts on some topics."

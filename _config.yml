@@ -12,7 +12,7 @@ minimal_mistakes_skin: "dark" # You can change this to other skins if preferred
 
 # Site Author
 author:
-  name             : "        "
+  name             : "Kerem Zengin"
   avatar           : "/assets/images/bio-photo.jpg"
   bio              : 
   location         : "METU"
@@ -53,7 +53,7 @@ defaults:
   # _posts
   - scope:
       path: ""
-      type: "posts"
+      type: "post"
     values:
       layout: "post"
       author_profile: true
@@ -67,7 +67,7 @@ defaults:
       path: "_pages"
       type: pages
     values:
-      layout: single
+      layout: post
       author_profile: true
       mathjax: true  # Add this line to enable MathJax for _pages
   # _projects
@@ -90,7 +90,7 @@ defaults:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
+paginate: 2 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
