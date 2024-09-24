@@ -8,6 +8,6 @@ use_math: true
 ---
 
 
-- [Stochastic ODEs and AI Integration for Stock Price Prediction](/projects/ongoing-research-project/)
+- [Stochastic ODEs with DiffusionNets for Stock Price Prediction](/projects/ongoing-research-project/)
   
 
