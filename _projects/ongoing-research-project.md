@@ -11,10 +11,10 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
   overlay_image: /assets/images/stock-market-header.jpg
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  
 sidebar:
   - title: "Project Timeline"
-    text: "2023 - Present"
+    text: "2024, May - Present"
   - title: "Collaborators"
     text: "Dr. Jane Doe, Prof. John Smith"
 toc: true
@@ -54,7 +54,7 @@ toc_icon: "cog"
 
 1. **Stochastic Differential Equations**: We use the Black-Scholes model as a foundation:
 
-   $$dS = \mu S dt + \sigma S dW$$
+   $$ dS = \mu S dt + \sigma S dW $$
 
    Where $S$ is the stock price, $\mu$ is the drift, $\sigma$ is the volatility, and $dW$ is a Wiener process.
 

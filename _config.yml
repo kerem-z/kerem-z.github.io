@@ -14,7 +14,7 @@ minimal_mistakes_skin: "dark" # You can change this to other skins if preferred
 author:
   name             : "Kerem Zengin"
   avatar           : "/assets/images/bio-photo.jpg"
-  bio              : "doing some stuff"
+  bio              : 
   location         : "Middle East Technical University"
   links:
     - label: "Email"
