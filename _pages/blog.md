@@ -13,11 +13,11 @@ header:
   overlay_filter: "0.5"
   overlay_image: /assets/images/blog-header.jpg
   
-excerpt: "Explore my thoughts, research findings, and insights on various topics."
+excerpt: "Some Thoughts on some topics."
 ---
 
 <div class="grid__wrapper">
-  {% assign unique_posts = site.posts | uniq %}
+  {% assign unique_posts = site.posts %}
   {% for post in unique_posts %}
     {% include archive-single.html type="grid" %}
   {% endfor %}

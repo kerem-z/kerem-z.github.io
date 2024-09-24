@@ -42,13 +42,6 @@ toc_icon: "cog"
 
 ## Project Overview
 
-<div class="notice">
-  <p>This research project aims to revolutionize stock price prediction by combining the power of stochastic differential equations with cutting-edge artificial intelligence techniques.</p>
-</div>
-
-![Project Visualization](/assets/images/project-visualization.png)
-*Figure 1: Visual representation of our hybrid model*
-
 
 
 
