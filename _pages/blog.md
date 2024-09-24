@@ -8,11 +8,6 @@ entries_layout: grid
 classes: wide
 mathjax: true
 use_math: true
-header:
-  overlay_color: "#005"
-  overlay_filter: "0.5"
-  overlay_image: /assets/images/blog-header.jpg
-  
 excerpt: "Some Thoughts on some topics."
 ---
 
