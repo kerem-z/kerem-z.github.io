@@ -15,7 +15,7 @@ author:
   name             : "Kerem Zengin"
   avatar           : "/assets/images/bio-photo.jpg"
   bio              : 
-  location         : "Middle East Technical University"
+  location         : "METU"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
