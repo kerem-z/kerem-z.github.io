@@ -21,7 +21,7 @@
             <div class="nav-right">
                 <div class="nav-links">
                     <a href="research.html" class="nav-button">Research</a>
-                    <a href="blog.html" class="nav-button active">Blog</a>
+                    <a href="blog-list.html" class="nav-button active">Blog</a>
                     <span class="nav-spacer"></span>
                     <button class="theme-toggle" aria-label="Toggle dark mode">
                         <i class="fas fa-moon"></i>
@@ -31,26 +31,23 @@
         </div>
     </nav>
 
-    <main class="blog-container">
+    <div class="blog-container">
         <aside class="sidebar">
             <h2 class="sidebar-title">Categories</h2>
-            <ul class="sidebar-list" id="categories-list">
-                <li><a href="#">Machine Learning</a></li>
-                <li><a href="#">Mathematics</a></li>
-                <li><a href="#">Foundations</a></li>
+            <ul id="categories-list" class="sidebar-list">
+                <!-- Categories will be dynamically loaded here -->
             </ul>
         </aside>
 
-        <div class="blog-list-container">
+        <main class="blog-list-container">
             <div id="blog-list">
-                <!-- Posts will be dynamically loaded here -->
+                <!-- Blog posts will be dynamically loaded here -->
             </div>
-
-            <div class="pagination" id="pagination">
+            <div id="pagination" class="pagination">
                 <!-- Pagination will be dynamically loaded here -->
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>

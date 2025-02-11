@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const isPostPage = window.location.pathname.endsWith('post.html');
-    const isBlogPage = window.location.pathname.endsWith('blog.html');
+    const isBlogPage = window.location.pathname.endsWith('blog-list.html');
 
     // Initialize dark mode
     initTheme();
@@ -80,7 +80,7 @@ async function loadBlogList() {
         const postsPerPage = 5;
 
         // Filter posts by category if one is selected
-        let filteredPosts = posts;  // posts is now directly an array
+        let filteredPosts = posts;
         if (selectedCategory) {
             filteredPosts = filteredPosts.filter(post => 
                 post.categories && post.categories.includes(selectedCategory)
@@ -93,6 +93,11 @@ async function loadBlogList() {
         const currentPosts = filteredPosts.slice(start, end);
 
         const blogList = document.getElementById('blog-list');
+        if (!blogList) {
+            console.error('Blog list container not found');
+            return;
+        }
+        
         blogList.innerHTML = '';
 
         if (filteredPosts.length === 0) {
@@ -105,8 +110,14 @@ async function loadBlogList() {
             postElement.className = 'blog-post';
             
             postElement.innerHTML = `
-                <h2><a href="post.html?post=${post.file}">${post.title}</a></h2>
+                <h2><a href="post.html?post=${encodeURIComponent(post.file)}">${post.title}</a></h2>
                 <p>${post.description}</p>
+                ${post.categories ? `
+                <div class="categories-list">
+                    ${post.categories.map(category => 
+                        `<a href="?category=${encodeURIComponent(category)}" class="category-tag">${category}</a>`
+                    ).join('')}
+                </div>` : ''}
             `;
             blogList.appendChild(postElement);
         });
@@ -116,7 +127,10 @@ async function loadBlogList() {
 
     } catch (error) {
         console.error('Error loading blog list:', error);
-        document.getElementById('blog-list').innerHTML = '<p>Error loading blog posts. Please try again later.</p>';
+        const blogList = document.getElementById('blog-list');
+        if (blogList) {
+            blogList.innerHTML = '<p>Error loading blog posts. Please try again later.</p>';
+        }
     }
 }
 
