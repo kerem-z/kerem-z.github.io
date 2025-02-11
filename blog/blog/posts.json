@@ -1,0 +1,32 @@
+{
+    "posts": [
+        {
+            "title": "Causal Structures in Neural Networks",
+            "description": "Exploring how causal frameworks can enhance our understanding of neural network decision-making, combining Pearl's do-calculus with modern interpretability techniques.",
+            "file": "causal-structures.md",
+            "date": "2024-03-25",
+            "categories": ["Machine Learning", "Mathematics", "Foundations"]
+        },
+        {
+            "title": "Type Theory and Knowledge Representation",
+            "description": "Investigating how Martin-Löf type theory and category theory can provide formal foundations for representing knowledge in AI systems.",
+            "file": "type-theory-knowledge.md",
+            "date": "2024-03-20",
+            "categories": ["Mathematics", "Foundations"]
+        },
+        {
+            "title": "Beyond Statistical Learning: Embedding Semantic Structures",
+            "description": "Examining how geometric embedding techniques can incorporate semantic and causal information, moving beyond pure statistical correlations.",
+            "file": "semantic-embeddings.md",
+            "date": "2024-03-15",
+            "categories": ["Machine Learning", "Mathematics"]
+        },
+        {
+            "title": "Formal Methods in Machine Learning Interpretability",
+            "description": "A rigorous approach to understanding neural network behavior through the lens of formal mathematical methods and categorical structures.",
+            "file": "formal-interpretability.md",
+            "date": "2024-03-10",
+            "categories": ["Machine Learning", "Mathematics", "Foundations"]
+        }
+    ]
+}

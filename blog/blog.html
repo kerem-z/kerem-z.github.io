@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Kerem Zengin</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-left">
+                <div class="nav-title"><a href="index.html" class="nav-button">Kerem Zengin</a></div>
+                <div class="contact-links">
+                    <a href="https://github.com/kerem-z" target="_blank" class="nav-button"><i class="fab fa-github"></i></a>
+                    <a href="mailto:kerem.zengin@metu.edu.tr" class="nav-button"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="research.html" class="nav-button">Research</a>
+                    <a href="blog.html" class="nav-button active">Blog</a>
+                    <span class="nav-spacer"></span>
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="blog-container">
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Categories</h2>
+            <ul class="sidebar-list" id="categories-list">
+                <li><a href="#">Machine Learning</a></li>
+                <li><a href="#">Mathematics</a></li>
+                <li><a href="#">Foundations</a></li>
+            </ul>
+        </aside>
+
+        <div class="blog-list-container">
+            <div id="blog-list">
+                <!-- Posts will be dynamically loaded here -->
+            </div>
+
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be dynamically loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
