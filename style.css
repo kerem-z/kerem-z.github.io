@@ -481,22 +481,344 @@ code {
 
 /* Homepage */
 .home-container {
-    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
 }
 
-.home-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
+/* Intro section */
+.intro-section {
+    margin-bottom: 4rem;
 }
 
-.home-subtitle {
-    color: var(--text-secondary);
-    font-size: 1.25rem;
+.intro-section h1 {
+    font-size: 3.5rem;
     margin-bottom: 2rem;
-    font-family: 'EB Garamond', Georgia, serif;
-    font-style: italic;
+    color: var(--text-primary);
+}
+
+.intro-text {
+    font-size: 1.4rem;
     line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.intro-content {
+    max-width: 800px;
+}
+
+/* Interest blocks */
+.interest-block {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.interest-block:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.interest-block h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.interest-block h3 i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.interest-block p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.interest-block .text-link {
+    color: var(--accent-color);
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.interest-block .text-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.interest-block .text-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .interest-block {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .intro-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro-text {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .interest-block {
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .interest-block h3 {
+        font-size: 1.2rem;
+    }
+
+    .interest-block p {
+        font-size: 1rem;
+    }
+}
+
+/* Main links */
+.main-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.text-link {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.text-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.text-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.link-arrow {
+    transition: transform 0.3s ease;
+}
+
+.text-link:hover .link-arrow {
+    transform: translateX(5px);
+}
+
+/* Recent section */
+.recent-section {
+    margin-top: 6rem;
+    position: relative;
+}
+
+.recent-section h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.recent-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+.recent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.recent-card {
+    text-decoration: none;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.recent-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: -1;
+}
+
+.recent-card:hover {
+    transform: translateY(-10px);
+}
+
+.recent-card:hover::after {
+    opacity: 1;
+}
+
+.card-gif-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 66.67%; /* 3:2 aspect ratio */
+}
+
+.card-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.recent-card:hover .card-gif {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 1.5rem;
+    background: var(--bg-primary);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.recent-card h3 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.card-meta {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-meta i {
+    font-size: 0.9rem;
+}
+
+.read-more-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--accent-color);
+}
+
+.recent-card:hover .read-more-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .recent-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .card-content {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .recent-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .recent-section {
+        margin-top: 4rem;
+    }
+
+    .recent-section h2 {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .recent-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card-gif-container {
+        padding-top: 56.25%; /* 16:9 aspect ratio for mobile */
+    }
+
+    .card-content {
+        padding: 1.25rem;
+    }
 }
 
 /* Images with Alt Text */
@@ -959,35 +1281,51 @@ a:hover {
 
 /* Homepage Styles */
 .about-section {
-    padding-top: 0.5rem;
-    max-width: 800px;
-    margin: 0 auto;
+    margin-bottom: 4rem;
 }
 
 .about-section h1 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--text-primary);
 }
 
 .about-section p {
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
 }
 
-.about-section ul {
-    list-style-type: none;
-    margin-left: 0.75rem;
+.about-section a {
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
-.about-section li {
-    margin-bottom: 0.4rem;
-    position: relative;
-    font-size: 0.95rem;
-    line-height: 1.5;
+.about-section a:hover {
+    opacity: 0.7;
+}
+
+/* Dark mode adjustments for about section */
+[data-theme="dark"] .about-section {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 1rem;
+    }
+
+    .about-section {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .about-section h1 {
+        font-size: 2rem;
+    }
 }
 
 /* Research Page Styles */
