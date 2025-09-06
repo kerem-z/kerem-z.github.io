@@ -3,7 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Kerem Zengin</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Blog - Kerem Zengin | Applied Mathematics & Machine Learning Insights</title>
+    <meta name="title" content="Blog - Kerem Zengin | Applied Mathematics & Machine Learning Insights">
+    <meta name="description" content="Read Kerem Zengin's blog posts on Physics-Informed Neural Networks, machine learning theory, numerical analysis, and applied mathematics research.">
+    <meta name="keywords" content="Blog, Applied Mathematics, Machine Learning, PINN, Neural Networks, Research, Academic Writing, Kerem Zengin">
+    <meta name="author" content="Kerem Zengin">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kerem-z.github.io/blog-list.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kerem-z.github.io/blog-list.html">
+    <meta property="og:title" content="Blog - Kerem Zengin | Applied Mathematics & Machine Learning Insights">
+    <meta property="og:description" content="Read blog posts on Physics-Informed Neural Networks, machine learning theory, and applied mathematics research.">
+    <meta property="og:image" content="https://kerem-z.github.io/assets/blog-og-image.jpg">
+    <meta property="og:site_name" content="Kerem Zengin">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kerem-z.github.io/blog-list.html">
+    <meta property="twitter:title" content="Blog - Kerem Zengin | Applied Mathematics & Machine Learning Insights">
+    <meta property="twitter:description" content="Read blog posts on Physics-Informed Neural Networks, machine learning theory, and applied mathematics research.">
+    <meta property="twitter:image" content="https://kerem-z.github.io/assets/blog-og-image.jpg">
+    
+    <!-- Structured Data for Blog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Kerem Zengin's Blog",
+        "description": "Blog posts on Applied Mathematics, Physics-Informed Neural Networks, and Machine Learning",
+        "url": "https://kerem-z.github.io/blog-list.html",
+        "author": {
+            "@type": "Person",
+            "name": "Kerem Zengin",
+            "url": "https://kerem-z.github.io"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Kerem Zengin"
+        }
+    }
+    </script>
+    
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -20,8 +64,9 @@
             </div>
             <div class="nav-right">
                 <div class="nav-links">
-                    <a href="research.html" class="nav-button">Research</a>
                     <a href="blog-list.html" class="nav-button active">Blog</a>
+                    <a href="research.html" class="nav-button">Research</a>
+                    <a href="courses.html" class="nav-button">Courses</a>
                     <span class="nav-spacer"></span>
                     <button class="theme-toggle" aria-label="Toggle dark mode">
                         <i class="fas fa-moon"></i>
@@ -33,10 +78,38 @@
 
     <div class="blog-container">
         <aside class="sidebar">
-            <h2 class="sidebar-title">Categories</h2>
-            <ul id="categories-list" class="sidebar-list">
-                <!-- Categories will be dynamically loaded here -->
-            </ul>
+            <div class="search-section">
+                <h2 class="sidebar-title">Search</h2>
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search posts..." autocomplete="off">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <label class="filter-label">Sort by:</label>
+                        <select id="sort-select" class="filter-select">
+                            <option value="date-desc">Newest First</option>
+                            <option value="date-asc">Oldest First</option>
+                            <option value="relevance">Most Relevant</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="category">By Category</option>
+                        </select>
+                    </div>
+                    
+                    <button id="clear-filters" class="clear-filters-btn">
+                        <i class="fas fa-times"></i>
+                        Clear
+                    </button>
+                </div>
+            </div>
+            
+            <div class="categories-section">
+                <h2 class="sidebar-title">Categories</h2>
+                <ul id="categories-list" class="sidebar-list">
+                    <!-- Categories will be dynamically loaded here -->
+                </ul>
+            </div>
         </aside>
 
         <main class="blog-list-container">
@@ -50,5 +123,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="analytics.js"></script>
 </body>
 </html> 

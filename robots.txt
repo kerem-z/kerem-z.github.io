@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kerem-z.github.io/sitemap.xml
+
+# Crawl delay (optional, helps prevent overloading)
+Crawl-delay: 1
+
+# Disallow certain paths if needed
+# Disallow: /admin/
+# Disallow: /private/

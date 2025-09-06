@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - Admin Only</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-xl);
+        }
+        
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: var(--space-2xl);
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: var(--space-sm);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: var(--space-md);
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        .analytics-dashboard {
+            display: none;
+        }
+        
+        .analytics-section {
+            background: var(--bg-elevated);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .metric-card {
+            background: var(--bg-primary);
+            padding: var(--space-lg);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: block;
+        }
+        
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: var(--space-xs);
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-md);
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: var(--space-sm);
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+        
+        .data-table th {
+            background: var(--bg-elevated);
+            font-weight: 600;
+        }
+        
+        .error-message {
+            color: var(--error-color);
+            margin-top: var(--space-sm);
+            font-size: 0.9rem;
+        }
+        
+        .export-btn {
+            background: var(--success-color);
+            color: white;
+            border: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 4px;
+            cursor: pointer;
+            margin: var(--space-sm);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="nav-left">
+                <div class="nav-title"><a href="index.html" class="nav-button">Kerem Zengin</a></div>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="index.html" class="nav-button">Home</a>
+                    <a href="blog-list.html" class="nav-button">Blog</a>
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <!-- Login Form -->
+        <div id="login-section" class="login-form">
+            <h1>Analytics Dashboard</h1>
+            <p>Enter admin credentials to access analytics</p>
+            
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label class="form-label">Access Code:</label>
+                    <input type="password" id="admin-password" class="form-input" placeholder="Enter access code" required>
+                </div>
+                <button type="submit" class="login-btn">Access Dashboard</button>
+                <div id="login-error" class="error-message" style="display: none;"></div>
+            </form>
+        </div>
+
+        <!-- Analytics Dashboard -->
+        <div id="analytics-dashboard" class="analytics-dashboard">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-xl);">
+                <h1>Analytics Dashboard</h1>
+                <div>
+                    <button class="export-btn" onclick="exportAnalytics()">
+                        <i class="fas fa-download"></i> Export Data
+                    </button>
+                    <button class="export-btn" onclick="clearAnalytics()" style="background: var(--error-color);">
+                        <i class="fas fa-trash"></i> Clear Data
+                    </button>
+                    <button class="export-btn" onclick="logout()" style="background: var(--text-secondary);">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+
+            <!-- Overview Metrics -->
+            <div class="analytics-section">
+                <h2>Overview</h2>
+                <div class="analytics-grid" id="overview-metrics">
+                    <!-- Metrics will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Page Views -->
+            <div class="analytics-section">
+                <h2>Page Views</h2>
+                <table class="data-table" id="page-views-table">
+                    <thead>
+                        <tr>
+                            <th>Page</th>
+                            <th>Views</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Popular Posts -->
+            <div class="analytics-section">
+                <h2>Popular Posts</h2>
+                <table class="data-table" id="popular-posts-table">
+                    <thead>
+                        <tr>
+                            <th>Post</th>
+                            <th>Views</th>
+                            <th>Engagement Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Top Events -->
+            <div class="analytics-section">
+                <h2>User Interactions</h2>
+                <table class="data-table" id="events-table">
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Count</th>
+                            <th>Frequency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Performance Metrics -->
+            <div class="analytics-section">
+                <h2>Performance</h2>
+                <div id="performance-metrics">
+                    <!-- Performance data will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="admin-analytics.js"></script>
+</body>
+</html>

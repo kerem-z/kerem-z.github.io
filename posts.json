@@ -3,16 +3,16 @@
         "title": "Causal Structures in Neural Networks",
         "description": "Exploring how causal frameworks can enhance our understanding of neural network decision-making, combining Pearl's do-calculus with modern interpretability techniques.",
         "file": "blog/causal-structures.md",
-        "date": "2024-03-25",
-        "categories": ["Machine Learning", "Mathematics", "Foundations"]
+        "date": "2025-09-06",
+        "readingTime": 7,
+        "categories": ["Explainable AI", "Category Theory"]
     },
-   
- 
     {
         "title": "Formal Methods in Machine Learning Interpretability",
         "description": "A rigorous approach to understanding neural network behavior through the lens of formal mathematical methods and categorical structures.",
         "file": "blog/formal-interpretability.md",
-        "date": "2024-03-10",
-        "categories": ["Machine Learning", "Mathematics", "Foundations"]
+        "date": "2025-08-28",
+        "readingTime": 6,
+        "categories": ["Explainable AI", "Type Theory"]
     }
-] 
+]

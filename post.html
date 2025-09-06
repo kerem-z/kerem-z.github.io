@@ -15,6 +15,11 @@
     <script src="https://cdn.jsdelivr.net/npm/marked@4.0.0/marked.min.js"></script>
 </head>
 <body>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress">
+        <div class="reading-progress-bar"></div>
+    </div>
+    
     <div class="wrapper">
         <nav class="nav-container">
             <div class="nav-content">
@@ -22,6 +27,8 @@
                     <div class="nav-links">
                         <a href="index.html" class="nav-button">Home</a>
                         <a href="blog-list.html" class="nav-button">Blog</a>
+                        <a href="research.html" class="nav-button">Research</a>
+                        <a href="courses.html" class="nav-button">Courses</a>
                     </div>
                     <button class="theme-toggle" aria-label="Toggle dark mode">
                         <i class="fas fa-moon"></i>
@@ -38,6 +45,29 @@
             <div class="research-links">
                 <!-- Research links will be dynamically loaded here -->
             </div>
+            
+            
+            <section class="comments-section">
+                <h2>Discussion</h2>
+                <p class="comments-info">Comments are handled via GitHub Issues</p>
+                <div class="comments-actions">
+                    <a href="#" id="view-comments-link" class="comments-btn primary" target="_blank" rel="noopener">
+                        <i class="fas fa-comments"></i>
+                        View Discussion
+                    </a>
+                    <a href="#" id="new-comment-link" class="comments-btn secondary" target="_blank" rel="noopener">
+                        <i class="fas fa-plus"></i>
+                        Start Discussion
+                    </a>
+                </div>
+            </section>
+            
+            <section class="related-posts">
+                <h2>Related Posts</h2>
+                <div id="related-posts-container">
+                    <!-- Related posts will be dynamically loaded here -->
+                </div>
+            </section>
         </main>
     </div>
 
@@ -45,5 +75,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked@4.0.0/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
     <script src="script.js"></script>
+    <script src="analytics.js"></script>
+    <script src="github-comments.js"></script>
 </body>
 </html> 

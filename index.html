@@ -3,10 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kerem Zengin</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Kerem Zengin - Master's Student & Research Assistant in Applied Mathematics</title>
+    <meta name="title" content="Kerem Zengin - Master's Student & Research Assistant in Applied Mathematics">
+    <meta name="description" content="Personal blog of Kerem Zengin, Master's student and Research Assistant at METU Institute of Applied Mathematics. Exploring Physics-Informed Neural Networks, numerical analysis, and machine learning theory.">
+    <meta name="keywords" content="Kerem Zengin, Applied Mathematics, Physics-Informed Neural Networks, PINN, Machine Learning, Numerical Analysis, METU, Research, Blog">
+    <meta name="author" content="Kerem Zengin">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kerem-z.github.io/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kerem-z.github.io/">
+    <meta property="og:title" content="Kerem Zengin - Master's Student & Research Assistant in Applied Mathematics">
+    <meta property="og:description" content="Personal blog exploring Physics-Informed Neural Networks, numerical analysis, and machine learning theory.">
+    <meta property="og:image" content="https://kerem-z.github.io/assets/og-image.jpg">
+    <meta property="og:site_name" content="Kerem Zengin">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kerem-z.github.io/">
+    <meta property="twitter:title" content="Kerem Zengin - Master's Student & Research Assistant in Applied Mathematics">
+    <meta property="twitter:description" content="Personal blog exploring Physics-Informed Neural Networks, numerical analysis, and machine learning theory.">
+    <meta property="twitter:image" content="https://kerem-z.github.io/assets/og-image.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kerem Zengin",
+        "url": "https://kerem-z.github.io",
+        "sameAs": [
+            "https://github.com/kerem-z"
+        ],
+        "jobTitle": "Master's Student & Research Assistant",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "METU Institute of Applied Mathematics"
+        },
+        "description": "Master's student and Research Assistant specializing in Physics-Informed Neural Networks and numerical analysis",
+        "knowsAbout": ["Applied Mathematics", "Physics-Informed Neural Networks", "Machine Learning", "Numerical Analysis"],
+        "email": "kerem.zengin@metu.edu.tr"
+    }
+    </script>
+    
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
     <nav class="nav-container">
@@ -20,8 +75,9 @@
             </div>
             <div class="nav-right">
                 <div class="nav-links">
-                    <a href="research.html" class="nav-button">Research</a>
                     <a href="blog-list.html" class="nav-button">Blog</a>
+                    <a href="research.html" class="nav-button">Research</a>
+                    <a href="courses.html" class="nav-button">Courses</a>
                     <span class="nav-spacer"></span>
                     <button class="theme-toggle" aria-label="Toggle dark mode">
                         <i class="fas fa-sun"></i>
@@ -37,8 +93,7 @@
             <p>
                 Hi! I'm Kerem, a Master's student and Research Assistant at the Institute of Applied Mathematics, METU. This is my personal blog where I share my thoughts on various stuff. If you're interested in my research, you can check out my <a href="research.html">research page</a>.  
                 For blog posts, head over to my <a href="blog-list.html">blog</a>.  
-                And if you'd like to play chess, you can find me on  
-                <a href="https://lichess.org/@/meta-witty" target="_blank">Lichess</a>.
+                
                 
             </p>
 
@@ -85,5 +140,6 @@
     </main>
 
     <script src="script.js"></script>
+    <script src="analytics.js"></script>
 </body>
 </html> 
