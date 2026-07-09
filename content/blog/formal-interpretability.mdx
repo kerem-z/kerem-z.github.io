@@ -1,0 +1,21 @@
+---
+title: "Formal Methods in ML Interpretability"
+description: "What would it mean for an explanation to be correct, not merely persuasive?"
+date: "2025-08-28"
+categories: ["Explainable AI", "Type Theory"]
+status: "forthcoming"
+---
+
+Interpretability tools often optimize for human comfort: a highlight, a story, a local surrogate. Formal methods ask a colder question — under what guarantees does an explanation remain valid when the model, the input, or the deployment context shifts?
+
+This essay is forthcoming. It will treat explanations as claims with types: what they assert, what they refuse to assert, and how those boundaries can be made checkable.
+
+## Math check
+
+Inline: a local certificate might assert stability inside an $\ell_\infty$ ball of radius $\varepsilon$. Display:
+
+$$
+\forall\, x' \in B_\infty(x,\varepsilon):\quad f(x') = f(x).
+$$
+
+If KaTeX is wired correctly, both expressions above render as mathematics rather than raw TeX.

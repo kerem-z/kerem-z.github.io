@@ -1,0 +1,166 @@
+.main {
+  padding-top: 4.5rem;
+}
+
+.hero {
+  max-width: 38rem;
+  margin-bottom: 4.5rem;
+}
+
+.name {
+  margin: 0 0 0.85rem;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.stance {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+  max-width: 28ch;
+}
+
+.selected {
+  margin-bottom: 4rem;
+}
+
+.sectionHead {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+  max-width: 40rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.item {
+  border-bottom: 1px solid var(--border);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0.15rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.25s var(--ease);
+}
+
+.row:hover {
+  background: var(--accent-soft);
+}
+
+.row:hover .title,
+.row:hover .arrow {
+  color: var(--accent);
+}
+
+.thumb {
+  display: block;
+  width: 5.5rem;
+  height: 4rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.index {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+.body {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.85rem;
+  align-items: baseline;
+}
+
+.title {
+  font-size: 1.28rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  transition: color 0.2s var(--ease);
+}
+
+.kind {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.blurb {
+  color: var(--ink-muted);
+  font-size: 1rem;
+  max-width: 46ch;
+}
+
+.arrow {
+  font-family: var(--font-mono);
+  color: var(--ink-faint);
+  transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.row:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding-top: 3rem;
+  }
+
+  .row {
+    grid-template-columns: 4.2rem 1fr;
+  }
+
+  .thumb {
+    width: 4.2rem;
+    height: 3.2rem;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .stance {
+    max-width: none;
+  }
+}

@@ -1,0 +1,56 @@
+.main {
+  padding-top: 3.5rem;
+  max-width: var(--prose);
+}
+
+.header {
+  margin-bottom: 2.25rem;
+}
+
+.title {
+  margin: 0.4rem 0 0.85rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.65rem;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+
+.badge {
+  color: var(--accent);
+}
+
+.deck {
+  margin: 1rem 0 0;
+  color: var(--ink-muted);
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+
+.back {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.back a {
+  text-decoration: none;
+  color: var(--ink-muted);
+}
+
+.back a:hover {
+  color: var(--accent);
+}

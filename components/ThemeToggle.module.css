@@ -1,0 +1,31 @@
+.toggle {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--ink-muted);
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  transition:
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    background 0.2s var(--ease);
+}
+
+.toggle:hover {
+  color: var(--ink);
+  border-color: var(--border-strong);
+  background: var(--accent-soft);
+}
+
+.toggle[data-ready="false"] {
+  opacity: 0.5;
+}
+
+.glyph {
+  font-size: 0.95rem;
+  line-height: 1;
+}

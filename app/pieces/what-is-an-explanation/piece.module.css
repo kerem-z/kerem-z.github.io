@@ -1,0 +1,110 @@
+.layout {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 2.5rem;
+  padding-top: 3rem;
+  align-items: start;
+}
+
+.toc {
+  position: sticky;
+  top: 5rem;
+  padding-top: 0.35rem;
+}
+
+.tocLabel {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.toc ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.toc a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: var(--accent);
+}
+
+.main {
+  min-width: 0;
+  max-width: 46rem;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+  max-width: 34rem;
+}
+
+.title {
+  margin: 0.45rem 0 0.9rem;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.deck {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+
+.article section {
+  scroll-margin-top: 5.5rem;
+}
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  color: var(--ink-muted);
+  font-size: 0.98rem;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .toc {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1rem;
+    align-items: baseline;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .toc ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.9rem;
+  }
+}
