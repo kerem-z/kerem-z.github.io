@@ -15,7 +15,7 @@ export default function CoursesPage() {
 
   return (
     <main className={`${styles.main} fade-up`}>
-      <h1 className={styles.title}>Courses</h1>
+      <h1 className="sr-only">Courses</h1>
       <p className={styles.lede}>
         Some courses that I am (or was) a teaching assistant for.
       </p>

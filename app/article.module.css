@@ -38,9 +38,9 @@
 }
 
 .back {
-  margin-top: 2.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
+  margin-top: 1.25rem;
+  padding-top: 0;
+  border-top: none;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.04em;

@@ -1,0 +1,415 @@
+.main {
+  padding-top: 3.5rem;
+  max-width: 54rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+  margin-bottom: 1.35rem;
+}
+
+.sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.months {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.15rem;
+}
+
+.monthItem {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.monthSep {
+  color: var(--ink-faint);
+  opacity: 0.4;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.monthBtn {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  cursor: pointer;
+  transition: color 0.2s var(--ease);
+}
+
+.monthBtn:hover {
+  color: var(--ink-muted);
+}
+
+.monthBtn[data-active="true"] {
+  color: var(--ink);
+}
+
+.sortBtn {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  cursor: pointer;
+  transition: color 0.2s var(--ease);
+}
+
+.sortBtn:hover {
+  color: var(--ink-muted);
+}
+
+.sortBtn[data-active="true"] {
+  color: var(--ink);
+}
+
+.sortSep {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  opacity: 0.5;
+}
+
+.map {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.mapHub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.65rem 1rem;
+  margin-bottom: 0.55rem;
+}
+
+.hub {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  cursor: pointer;
+  transition: color 0.2s var(--ease);
+}
+
+.hub:hover,
+.hub[data-active="true"] {
+  color: var(--ink);
+}
+
+.hint {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  opacity: 0.8;
+}
+
+.trail {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.trailClear {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  cursor: pointer;
+}
+
+.trailClear:hover {
+  color: var(--accent);
+}
+
+.mapFlow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  animation: branch-in 0.35s var(--ease) both;
+}
+
+.flowCol {
+  display: flex;
+  align-items: flex-start;
+  flex: 0 1 auto;
+  color: var(--accent);
+}
+
+.branchSvg {
+  display: block;
+  flex: 0 0 auto;
+  overflow: visible;
+  color: var(--accent);
+}
+
+.curve {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  opacity: 0.7;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-curve 0.75s var(--ease) forwards;
+}
+
+.curve[data-active="true"] {
+  opacity: 1;
+}
+
+.hubDot {
+  fill: currentColor;
+}
+
+.nodeList {
+  list-style: none;
+  margin: 0;
+  padding: 0 0.75rem 0 0.15rem;
+  display: grid;
+}
+
+.nodeItem {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-6px);
+  animation: sub-in 0.35s var(--ease) forwards;
+}
+
+.node {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  letter-spacing: -0.01em;
+  color: var(--ink-muted);
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s var(--ease);
+  white-space: nowrap;
+}
+
+.node:hover,
+.node[data-hot="true"] {
+  color: var(--ink);
+}
+
+.node[data-active="true"] {
+  color: var(--accent);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  margin: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 7.25rem minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: center;
+  padding: 1.15rem 0;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s var(--ease);
+}
+
+.card:hover {
+  opacity: 0.82;
+}
+
+.card:hover .postTitle {
+  color: var(--accent);
+}
+
+.media {
+  display: block;
+  width: 7.25rem;
+  height: 5.1rem;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--bg-elevated);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.body {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+
+.dot {
+  opacity: 0.55;
+}
+
+.cats {
+  color: var(--ink-muted);
+}
+
+.badge {
+  color: var(--accent);
+}
+
+.postTitle {
+  font-size: 1.18rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  transition: color 0.2s var(--ease);
+}
+
+.desc {
+  color: var(--ink-muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  max-width: 40ch;
+}
+
+.empty {
+  margin: 2rem 0 0;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+@keyframes branch-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes draw-curve {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes sub-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapFlow,
+  .curve,
+  .nodeItem {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .branchSvg {
+    display: none;
+  }
+
+  .mapFlow {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .nodeItem {
+    height: auto !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  .card {
+    grid-template-columns: 5.2rem 1fr;
+    gap: 0.85rem;
+  }
+
+  .media {
+    width: 5.2rem;
+    height: 4rem;
+  }
+
+  .desc {
+    display: none;
+  }
+}

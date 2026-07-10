@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kerem Zengin</title>
+    <link>https://kerem-z.github.io/</link>
+    <description>Essays and notes on type theory, explainable AI, category theory, cognitive science, and the philosophy of mind. Teaching assistant courses at METU IAM.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Aug 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://kerem-z.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Types as constraints</title>
+      <link>https://kerem-z.github.io/blog/types-as-constraints-demo/</link>
+      <guid isPermaLink="true">https://kerem-z.github.io/blog/types-as-constraints-demo/</guid>
+      <pubDate>Wed, 12 Aug 2026 12:00:00 GMT</pubDate>
+      <description>A playable sketch of type refinement: drag the precision dial and watch what gets forbidden.</description>
+    </item>
+    <item>
+      <title>Formal Methods in ML Interpretability</title>
+      <link>https://kerem-z.github.io/blog/formal-interpretability/</link>
+      <guid isPermaLink="true">https://kerem-z.github.io/blog/formal-interpretability/</guid>
+      <pubDate>Mon, 03 Aug 2026 12:00:00 GMT</pubDate>
+      <description>What would it mean for an explanation to be correct, not merely persuasive?</description>
+    </item>
+    <item>
+      <title>What is an explanation?</title>
+      <link>https://kerem-z.github.io/pieces/what-is-an-explanation/</link>
+      <guid isPermaLink="true">https://kerem-z.github.io/pieces/what-is-an-explanation/</guid>
+      <pubDate>Thu, 09 Jul 2026 12:00:00 GMT</pubDate>
+      <description>Climb an explanation ladder: saliency, counterfactuals, causal claims, formal guarantees.</description>
+    </item>
+    <item>
+      <title>Causal Structures in Neural Networks</title>
+      <link>https://kerem-z.github.io/blog/causal-structures/</link>
+      <guid isPermaLink="true">https://kerem-z.github.io/blog/causal-structures/</guid>
+      <pubDate>Thu, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <description>Do-calculus as an epistemic tool for reading model decisions, not a dashboard feature.</description>
+    </item>
+  </channel>
+</rss>

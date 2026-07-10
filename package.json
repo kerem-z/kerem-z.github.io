@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "rss": "npx tsx scripts/write-rss.ts",
+    "predev": "npm run rss",
     "dev": "next dev --turbopack",
+    "prebuild": "npm run rss",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
