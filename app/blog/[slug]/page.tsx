@@ -5,6 +5,7 @@ import { FeedbackLinks } from "@/components/FeedbackLinks";
 import { getAllSlugs, getContentBySlug } from "@/lib/content";
 import { formatDate } from "@/lib/dates";
 import { mdxOptions } from "@/lib/mdx";
+import { ogImageForSlug, ogImages } from "@/lib/og";
 import { site } from "@/lib/site";
 import styles from "../../article.module.css";
 
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getContentBySlug("blog", slug);
   if (!post) return {};
   const url = `/blog/${slug}/`;
+  const image = ogImageForSlug(slug);
   return {
     title: post.title,
     description: post.description,
@@ -33,15 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url,
       siteName: site.name,
       publishedTime: post.date,
-      images: [
-        { url: "/og.png", width: 1200, height: 630, alt: post.title },
-      ],
+      images: ogImages(image, post.title),
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: ["/og.png"],
+      images: [image],
     },
   };
 }

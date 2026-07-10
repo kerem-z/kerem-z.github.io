@@ -5,8 +5,12 @@ import { FeedbackLinks } from "@/components/FeedbackLinks";
 import { TypeRefinement } from "@/components/pieces/TypeRefinement";
 import { formatDate } from "@/lib/dates";
 import { mdxOptions } from "@/lib/mdx";
+import { ogImageForSlug, ogImages } from "@/lib/og";
 import { site } from "@/lib/site";
 import styles from "../../article.module.css";
+
+const slug = "types-as-constraints-demo";
+const og = ogImageForSlug(slug);
 
 export const metadata: Metadata = {
   title: "Types as constraints",
@@ -20,12 +24,12 @@ export const metadata: Metadata = {
     url: "/blog/types-as-constraints-demo/",
     siteName: site.name,
     publishedTime: "2026-08-12",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    images: ogImages(og, "Types as constraints"),
   },
   twitter: {
     card: "summary_large_image",
     title: "Types as constraints",
-    images: ["/og.png"],
+    images: [og],
   },
 };
 

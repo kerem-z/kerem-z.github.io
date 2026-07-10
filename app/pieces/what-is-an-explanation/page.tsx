@@ -5,7 +5,11 @@ import { FeedbackLinks } from "@/components/FeedbackLinks";
 import { ExplanationLadder } from "@/components/pieces/ExplanationLadder";
 import { vignette } from "@/components/pieces/ladder/data";
 import { indexBib, loadBibFile } from "@/lib/bib";
+import { ogImageForSlug, ogImages } from "@/lib/og";
 import styles from "./piece.module.css";
+
+const slug = "what-is-an-explanation";
+const og = ogImageForSlug(slug);
 
 export const metadata: Metadata = {
   title: "What is an explanation?",
@@ -17,12 +21,12 @@ export const metadata: Metadata = {
     description:
       "An interactive essay on prediction versus explanation - saliency, counterfactuals, causal claims, and formal guarantees.",
     url: "/pieces/what-is-an-explanation/",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    images: ogImages(og, "What is an explanation?"),
   },
   twitter: {
     card: "summary_large_image",
     title: "What is an explanation?",
-    images: ["/og.png"],
+    images: [og],
   },
 };
 

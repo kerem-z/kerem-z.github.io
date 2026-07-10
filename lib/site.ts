@@ -1,6 +1,6 @@
 export const site = {
   name: "Kerem Zengin",
-  title: "Kerem Zengin - essays on structure, explanation, and mind",
+  title: "Kerem Zengin",
   description:
     "Essays and notes on type theory, explainable AI, category theory, cognitive science, and the philosophy of mind. Teaching assistant courses at METU IAM.",
   url: "https://kerem-z.github.io",
@@ -157,6 +157,15 @@ export const categoryTree: Record<string, string[]> = {
   ],
 };
 
+/** Subcategory → deeper branches (third column in the topic map). */
+export const subcategoryTree: Record<string, string[]> = {
+  "Intuitionistic type theory": [
+    "Martin-Löf type theory",
+    "Propositions as types",
+    "Identity types",
+  ],
+};
+
 export const blogCards: BlogCard[] = [
   {
     slug: "what-is-an-explanation",
@@ -179,7 +188,12 @@ export const blogCards: BlogCard[] = [
     image: "/hypnosis.gif",
     date: "2026-08-12",
     categories: ["Type Theory"],
-    subcategories: ["Intuitionistic type theory", "Dependent types"],
+    subcategories: [
+      "Intuitionistic type theory",
+      "Dependent types",
+      "Martin-Löf type theory",
+      "Propositions as types",
+    ],
     status: "published",
   },
   {
@@ -202,7 +216,11 @@ export const blogCards: BlogCard[] = [
     image: "/hypnosis.gif",
     date: "2026-08-03",
     categories: ["XAI", "Type Theory"],
-    subcategories: ["Homotopy type theory", "Intuitionistic type theory"],
+    subcategories: [
+      "Homotopy type theory",
+      "Intuitionistic type theory",
+      "Identity types",
+    ],
     status: "forthcoming",
   },
 ];

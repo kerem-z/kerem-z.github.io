@@ -3,7 +3,12 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { formatDate } from "@/lib/dates";
-import { blogCards, categoryTree, type BlogCard } from "@/lib/site";
+import {
+  blogCards,
+  categoryTree,
+  subcategoryTree,
+  type BlogCard,
+} from "@/lib/site";
 import styles from "./BlogIndex.module.css";
 
 type SortMode = "date-desc" | "date-asc";
@@ -109,16 +114,21 @@ export function BlogIndex() {
   const months = useMemo(() => uniqueMonths(blogCards), []);
   const [category, setCategory] = useState<string | null>(null);
   const [subcategory, setSubcategory] = useState<string | null>(null);
+  const [leaf, setLeaf] = useState<string | null>(null);
   const [month, setMonth] = useState<string | null>(null);
   const [sort, setSort] = useState<SortMode>("date-desc");
   const [open, setOpen] = useState(false);
   const [hoverParent, setHoverParent] = useState<string | null>(null);
+  const [hoverSub, setHoverSub] = useState<string | null>(null);
 
   const activeParent = hoverParent ?? category;
   const activeParentIndex = activeParent
     ? categories.indexOf(activeParent)
     : -1;
   const subs = activeParent ? (categoryTree[activeParent] ?? []) : [];
+  const activeSub = hoverSub ?? subcategory;
+  const activeSubIndex = activeSub ? subs.indexOf(activeSub) : -1;
+  const leaves = activeSub ? (subcategoryTree[activeSub] ?? []) : [];
   const show = open || category !== null;
 
   const posts = useMemo(() => {
@@ -126,7 +136,9 @@ export function BlogIndex() {
     if (category) {
       filtered = filtered.filter((p) => p.categories.includes(category));
     }
-    if (subcategory) {
+    if (leaf) {
+      filtered = filtered.filter((p) => (p.subcategories ?? []).includes(leaf));
+    } else if (subcategory) {
       filtered = filtered.filter((p) =>
         (p.subcategories ?? []).includes(subcategory),
       );
@@ -139,34 +151,52 @@ export function BlogIndex() {
         ? a.date.localeCompare(b.date)
         : b.date.localeCompare(a.date),
     );
-  }, [category, subcategory, month, sort]);
+  }, [category, subcategory, leaf, month, sort]);
 
   const rowH = 38;
+  const subRowH = 34;
   const parentH = Math.max(48, 8 + categories.length * rowH);
-  const subH = Math.max(parentH, 8 + Math.max(subs.length, 1) * rowH);
+  const subH = Math.max(parentH, 8 + Math.max(subs.length, 1) * subRowH);
+  const leafH = Math.max(subH, 8 + Math.max(leaves.length, 1) * subRowH);
   const parentStartY = 14;
   const subStartY =
     activeParentIndex >= 0 ? 14 + activeParentIndex * rowH : 14;
+  const leafStartY =
+    activeSubIndex >= 0 ? 14 + activeSubIndex * subRowH : 14;
 
   function clearFilter() {
     setCategory(null);
     setSubcategory(null);
+    setLeaf(null);
     setMonth(null);
     setHoverParent(null);
+    setHoverSub(null);
     setOpen(false);
   }
 
   function pickParent(cat: string) {
     setCategory(cat);
     setSubcategory(null);
+    setLeaf(null);
     setHoverParent(cat);
+    setHoverSub(null);
     setOpen(true);
   }
 
   function pickSub(sub: string) {
     if (!activeParent) return;
     setCategory(activeParent);
-    setSubcategory((prev) => (prev === sub ? null : sub));
+    setSubcategory((prev) => (prev === sub && !leaf ? null : sub));
+    setLeaf(null);
+    setHoverSub(sub);
+    setOpen(true);
+  }
+
+  function pickLeaf(item: string) {
+    if (!activeParent || !activeSub) return;
+    setCategory(activeParent);
+    setSubcategory(activeSub);
+    setLeaf((prev) => (prev === item ? null : item));
     setOpen(true);
   }
 
@@ -223,6 +253,7 @@ export function BlogIndex() {
           if (!category) {
             setOpen(false);
             setHoverParent(null);
+            setHoverSub(null);
           }
         }}
       >
@@ -236,13 +267,10 @@ export function BlogIndex() {
           >
             Topics
           </button>
-          {!show && (
-            <span className={styles.hint}>hover to explore</span>
-          )}
-          {(category || subcategory) && (
+          {!show && <span className={styles.hint}>hover to explore</span>}
+          {(category || subcategory || leaf) && (
             <span className={styles.trail}>
-              {category}
-              {subcategory ? ` / ${subcategory}` : ""}
+              {[category, subcategory, leaf].filter(Boolean).join(" / ")}
               <button
                 type="button"
                 className={styles.trailClear}
@@ -275,7 +303,10 @@ export function BlogIndex() {
                       height: rowH,
                       animationDelay: `${70 + i * 50}ms`,
                     }}
-                    onMouseEnter={() => setHoverParent(cat)}
+                    onMouseEnter={() => {
+                      setHoverParent(cat);
+                      setHoverSub(null);
+                    }}
                   >
                     <button
                       type="button"
@@ -300,12 +331,10 @@ export function BlogIndex() {
                 <BranchCurves
                   count={subs.length}
                   startY={subStartY}
-                  rowH={34}
+                  rowH={subRowH}
                   width={130}
                   height={subH}
-                  activeIndex={
-                    subcategory ? subs.indexOf(subcategory) : null
-                  }
+                  activeIndex={activeSubIndex >= 0 ? activeSubIndex : null}
                   markerId="arrow-subs"
                 />
                 <ul className={styles.nodeList}>
@@ -314,17 +343,58 @@ export function BlogIndex() {
                       key={sub}
                       className={styles.nodeItem}
                       style={{
-                        height: 34,
+                        height: subRowH,
+                        animationDelay: `${60 + i * 55}ms`,
+                      }}
+                      onMouseEnter={() => setHoverSub(sub)}
+                    >
+                      <button
+                        type="button"
+                        className={styles.node}
+                        data-active={subcategory === sub}
+                        data-hot={activeSub === sub}
+                        onClick={() => pickSub(sub)}
+                      >
+                        {sub}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {leaves.length > 0 && activeSub ? (
+              <div
+                className={styles.flowCol}
+                style={{ minHeight: leafH }}
+                key={`leaf-${activeSub}`}
+              >
+                <BranchCurves
+                  count={leaves.length}
+                  startY={leafStartY}
+                  rowH={subRowH}
+                  width={120}
+                  height={leafH}
+                  activeIndex={leaf ? leaves.indexOf(leaf) : null}
+                  markerId="arrow-leaves"
+                />
+                <ul className={styles.nodeList}>
+                  {leaves.map((item, i) => (
+                    <li
+                      key={item}
+                      className={styles.nodeItem}
+                      style={{
+                        height: subRowH,
                         animationDelay: `${60 + i * 55}ms`,
                       }}
                     >
                       <button
                         type="button"
                         className={styles.node}
-                        data-active={subcategory === sub}
-                        onClick={() => pickSub(sub)}
+                        data-active={leaf === item}
+                        onClick={() => pickLeaf(item)}
                       >
-                        {sub}
+                        {item}
                       </button>
                     </li>
                   ))}
