@@ -1,6 +1,6 @@
 # Kerem Zengin
 
-Personal site — essays on structure, explanation, and mind.
+Personal site - essays on structure, explanation, and mind.
 
 ## Stack
 
@@ -15,13 +15,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) — not Live Server.
+Open [http://localhost:3000](http://localhost:3000) - not Live Server.
 
 ## Routes
 
-- `/` — short about + selected works
-- `/blog` — essays (+ link to interactive pieces)
-- `/courses` — TA courses
-- `/pieces/what-is-an-explanation` — interactive essay
+- `/` - short about + selected works
+- `/blog` - essays (+ link to interactive pieces)
+- `/courses` - TA courses
+- `/pieces/what-is-an-explanation` - interactive essay
 
 Legacy HTML archived under `_legacy/`.

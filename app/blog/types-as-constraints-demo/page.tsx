@@ -1,14 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { FeedbackLinks } from "@/components/FeedbackLinks";
 import { TypeRefinement } from "@/components/pieces/TypeRefinement";
+import { formatDate } from "@/lib/dates";
 import { mdxOptions } from "@/lib/mdx";
+import { site } from "@/lib/site";
 import styles from "../../article.module.css";
 
 export const metadata: Metadata = {
-  title: "Types as constraints — interactive demo",
+  title: "Types as constraints",
   description:
     "A playable sketch of type refinement: what a type forbids as precision increases.",
+  openGraph: {
+    type: "article",
+    title: "Types as constraints",
+    description:
+      "A playable sketch of type refinement: what a type forbids as precision increases.",
+    url: "/blog/types-as-constraints-demo/",
+    siteName: site.name,
+    publishedTime: "2026-08-12",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Types as constraints",
+    images: ["/og.png"],
+  },
 };
 
 const closing = `
@@ -28,7 +46,7 @@ export default function TypesDemoPage() {
         <p className="kicker">Blog · Interactive dummy</p>
         <h1 className={styles.title}>Types as constraints</h1>
         <p className={styles.meta}>
-          <time dateTime="2026-07-09">2026-07-09</time>
+          <time dateTime="2026-08-12">{formatDate("2026-08-12")}</time>
           <span aria-hidden>·</span>
           <span>Demo</span>
         </p>
@@ -43,7 +61,7 @@ export default function TypesDemoPage() {
           When we refine <code>Any → string → Email → VerifiedEmail</code>, we
           do not primarily <em>add</em> information. We{" "}
           <strong>forbid interpretations</strong>. That forbidding is the
-          interesting part — for programming languages, and for any system that
+          interesting part - for programming languages, and for any system that
           claims to “know” something about the world.
         </p>
 
@@ -57,6 +75,11 @@ export default function TypesDemoPage() {
           copy with a real essay when ready.
         </p>
       </article>
+
+      <FeedbackLinks
+        title="Types as constraints"
+        path="/blog/types-as-constraints-demo/"
+      />
 
       <p className={styles.back}>
         <Link href="/blog/">← Back to blog</Link>

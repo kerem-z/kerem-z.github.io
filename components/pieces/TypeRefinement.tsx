@@ -11,13 +11,15 @@ const levels: {
   accepts: string[];
   forbids: string[];
   claim: string;
+  check: (value: string) => boolean;
 }[] = [
   {
     id: 0,
     type: "Any",
-    accepts: ["42", '"hello"', "null", "{ x: 1 }", "() => {}"],
+    accepts: ["42", '"hello"', "null", "{ x: 1 }"],
     forbids: [],
     claim: "Almost nothing is ruled out. Meaning is unconstrained.",
+    check: () => true,
   },
   {
     id: 1,
@@ -25,6 +27,13 @@ const levels: {
     accepts: ['"hello"', '"a@b.co"', '"not-an-email"'],
     forbids: ["42", "null", "{ x: 1 }"],
     claim: "Only string-shaped values survive. Numbers and objects are out.",
+    check: (v) => {
+      const t = v.trim();
+      return (
+        (t.startsWith('"') && t.endsWith('"')) ||
+        (!/^\d+(\.\d+)?$/.test(t) && t !== "null" && !t.startsWith("{"))
+      );
+    },
   },
   {
     id: 2,
@@ -32,21 +41,30 @@ const levels: {
     accepts: ['"a@b.co"', '"kerem@metu.edu.tr"'],
     forbids: ['"hello"', '"not-an-email"', "42"],
     claim: "Syntax is constrained further. A string is no longer enough.",
+    check: (v) => {
+      const raw = v.trim().replace(/^"|"$/g, "");
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(raw);
+    },
   },
   {
     id: 3,
     type: "VerifiedEmail",
     accepts: ['"kerem@metu.edu.tr"'],
     forbids: ['"a@b.co"', '"hello"', "42"],
-    claim: "Now the type encodes a check in the world — not only a shape.",
+    claim: "Now the type encodes a check in the world - not only a shape.",
+    check: (v) => {
+      const raw = v.trim().replace(/^"|"$/g, "");
+      return raw === "kerem@metu.edu.tr";
+    },
   },
 ];
 
 export function TypeRefinement() {
   const [level, setLevel] = useState<Level>(0);
+  const [probe, setProbe] = useState('"kerem@metu.edu.tr"');
   const current = levels[level];
-
   const progress = useMemo(() => (level / (levels.length - 1)) * 100, [level]);
+  const ok = current.check(probe);
 
   return (
     <section className={styles.shell} aria-label="Type refinement demo">
@@ -91,6 +109,37 @@ export function TypeRefinement() {
 
       <p className={styles.claim}>{current.claim}</p>
 
+      <div className={styles.probe}>
+        <label htmlFor="probe-value">
+          Try a value against <code>{current.type}</code>
+        </label>
+        <div className={styles.probeRow}>
+          <input
+            id="probe-value"
+            value={probe}
+            onChange={(e) => setProbe(e.target.value)}
+            spellCheck={false}
+          />
+          <span className={styles.verdict} data-ok={ok}>
+            {ok ? "inhabits" : "rejected"}
+          </span>
+        </div>
+        <div className={styles.presets}>
+          {['"kerem@metu.edu.tr"', '"a@b.co"', '"hello"', "42", "null"].map(
+            (p) => (
+              <button
+                key={p}
+                type="button"
+                className={styles.preset}
+                onClick={() => setProbe(p)}
+              >
+                {p}
+              </button>
+            ),
+          )}
+        </div>
+      </div>
+
       <div className={styles.cols}>
         <div>
           <p className={styles.colLabel}>Still allowed</p>
@@ -119,8 +168,7 @@ export function TypeRefinement() {
       </div>
 
       <p className={styles.hint}>
-        Drag the dial. Refinement is mostly subtraction — each step deletes
-        interpretations.
+        Drag the dial, then probe values. Refinement is mostly subtraction.
       </p>
     </section>
   );

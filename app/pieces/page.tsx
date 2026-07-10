@@ -4,7 +4,7 @@ import styles from "../lists.module.css";
 
 export const metadata: Metadata = {
   title: "Pieces",
-  description: "Interactive essays — concepts you can step through.",
+  description: "Interactive essays - concepts you can step through.",
 };
 
 const pieces = [

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { SocialIcons } from "./SocialIcons";
 import styles from "./SiteFooter.module.css";
 
 export function SiteFooter() {
@@ -13,11 +13,9 @@ export function SiteFooter() {
           <span className={styles.sep}>·</span>
           <Link href="/courses/">Courses</Link>
           <span className={styles.sep}>·</span>
-          <a href={site.github} target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
+          <SocialIcons withSeparators />
           <span className={styles.sep}>·</span>
-          <a href={`mailto:${site.email}`}>Email</a>
+          <a href="/rss.xml">RSS</a>
         </p>
       </div>
     </footer>
