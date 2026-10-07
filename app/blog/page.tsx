@@ -3,12 +3,10 @@ import { BlogIndex } from "@/components/BlogIndex";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description:
-    "Essays on explanation, structure, type theory, and the philosophy of mind.",
+  description: "Notes and essays.",
   openGraph: {
     title: "Blog · Kerem Zengin",
-    description:
-      "Essays on explanation, structure, type theory, and the philosophy of mind.",
+    description: "Notes and essays.",
     url: "/blog/",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },

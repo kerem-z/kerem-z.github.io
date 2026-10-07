@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Cite, References } from "@/components/Citations";
 import { FeedbackLinks } from "@/components/FeedbackLinks";
 import { ExplanationLadder } from "@/components/pieces/ExplanationLadder";
@@ -196,19 +195,6 @@ export default function ExplanationPiecePage() {
           title="What is an explanation?"
           path="/pieces/what-is-an-explanation/"
         />
-
-        <footer className={styles.footer}>
-          <p>
-            Related:{" "}
-            <Link href="/blog/formal-interpretability/">
-              Formal Methods in ML Interpretability
-            </Link>
-            {" · "}
-            <Link href="/blog/causal-structures/">
-              Causal Structures in Neural Networks
-            </Link>
-          </p>
-        </footer>
       </main>
     </div>
   );

@@ -20,27 +20,31 @@ export default function CoursesPage() {
         Some courses that I am (or was) a teaching assistant for.
       </p>
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Current semester</h2>
-        <ul className={styles.list}>
-          {current.map((course) => (
-            <li key={course.slug}>
-              <CourseCard course={course} />
-            </li>
-          ))}
-        </ul>
-      </section>
+      {current.length > 0 ? (
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Current semester</h2>
+          <ul className={styles.list}>
+            {current.map((course) => (
+              <li key={course.slug}>
+                <CourseCard course={course} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Previous semesters</h2>
-        <ul className={styles.list}>
-          {previous.map((course) => (
-            <li key={course.slug}>
-              <CourseCard course={course} />
-            </li>
-          ))}
-        </ul>
-      </section>
+      {previous.length > 0 ? (
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Previous semesters</h2>
+          <ul className={styles.list}>
+            {previous.map((course) => (
+              <li key={course.slug}>
+                <CourseCard course={course} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
     </main>
   );
 }
@@ -54,7 +58,7 @@ function CourseCard({
     <Link href={`/courses/${course.slug}/`} className={styles.card}>
       <span className={styles.media}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={course.image} alt="" />
+        <img src={course.image} alt={course.imageAlt} />
       </span>
       <div className={styles.cardBody}>
         <p className={styles.code}>

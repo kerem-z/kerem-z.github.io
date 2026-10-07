@@ -12,11 +12,7 @@ import styles from "../../article.module.css";
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  // Dedicated interactive routes live beside [slug]; exclude them here.
-  const reserved = new Set(["types-as-constraints-demo"]);
-  return getAllSlugs("blog")
-    .filter((slug) => !reserved.has(slug))
-    .map((slug) => ({ slug }));
+  return getAllSlugs("blog").map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

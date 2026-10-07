@@ -42,7 +42,8 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className={`${styles.selected} fade-up fade-up-delay-1`}>
+      {selectedWorks.length > 0 ? (
+        <section className={`${styles.selected} fade-up fade-up-delay-1`}>
         <div className={styles.sectionHead}>
           <h2 className={styles.sectionTitle}>Recent Posts</h2>
         </div>
@@ -80,7 +81,8 @@ export default function HomePage() {
             </li>
           ))}
         </ol>
-      </section>
+        </section>
+      ) : null}
     </main>
   );
 }

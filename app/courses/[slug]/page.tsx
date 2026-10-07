@@ -28,7 +28,7 @@ export default async function CourseDetailPage({ params }: Props) {
   const course = getContentBySlug("courses", slug);
   if (!course) notFound();
 
-  const meta = courses.find((c) => c.slug === slug);
+  const meta = courses.find((item) => item.slug === slug);
 
   return (
     <main className={`${styles.main} fade-up`}>

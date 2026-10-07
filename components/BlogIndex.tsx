@@ -200,6 +200,15 @@ export function BlogIndex() {
     setOpen(true);
   }
 
+  if (blogCards.length === 0) {
+    return (
+      <main className={`${styles.main} fade-up`}>
+        <h1 className="sr-only">Blog</h1>
+        <p className={styles.empty}>Nothing here yet.</p>
+      </main>
+    );
+  }
+
   return (
     <main className={`${styles.main} fade-up`}>
       <header className={styles.header}>

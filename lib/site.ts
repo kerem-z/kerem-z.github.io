@@ -57,35 +57,7 @@ export type SelectedWork = {
   image?: string;
 };
 
-export const selectedWorks: SelectedWork[] = [
-  {
-    index: "01",
-    title: "What is an explanation?",
-    href: "/pieces/what-is-an-explanation/",
-    blurb: "Prediction is cheap. Explanation is a claim about why.",
-    categories: ["XAI", "Philosophy"],
-    date: "2026-07-09",
-    image: "/stairs.gif",
-  },
-  {
-    index: "02",
-    title: "Causal Structures in Neural Networks",
-    href: "/blog/causal-structures/",
-    blurb: "Do-calculus as an epistemic tool, not a dashboard feature.",
-    categories: ["Causality", "XAI"],
-    date: "2026-07-02",
-    image: "/200w.gif",
-  },
-  {
-    index: "03",
-    title: "Types as constraints",
-    href: "/blog/types-as-constraints-demo/",
-    blurb: "A playable sketch of refinement: what a type forbids.",
-    categories: ["Type Theory"],
-    date: "2026-08-12",
-    image: "/hypnosis.gif",
-  },
-];
+export const selectedWorks: SelectedWork[] = [];
 
 export type CourseMeta = {
   slug: string;
@@ -97,37 +69,51 @@ export type CourseMeta = {
   status: "current" | "previous";
   topics: string[];
   image: string;
+  imageAlt: string;
 };
 
 export const courses: CourseMeta[] = [
   {
+    slug: "math-119",
+    code: "MATH 119",
+    title: "Calculus with Analytic Geometry",
+    description: "Recitation: Friday, 08:40–10:30.",
+    level: "Undergraduate",
+    semester: "Fall 2026",
+    status: "current",
+    topics: ["Functions", "Limits", "Derivatives", "Integrals"],
+    image: "/newton.jpg",
+    imageAlt: "Portrait of Isaac Newton",
+  },
+  {
     slug: "iam529-nonlinear-dynamics",
     code: "IAM529",
     title: "Applied Nonlinear Dynamics",
-    description:
-      "Advanced study of nonlinear dynamical systems with applications to physics, biology, and engineering.",
+    description: "Graduate course on nonlinear dynamical systems.",
     level: "Graduate",
     semester: "Fall 2025",
-    status: "current",
+    status: "previous",
     topics: [
       "Dynamical Systems",
       "Bifurcation Theory",
       "Chaos Theory",
       "Stability Analysis",
     ],
-    image: "/98174.gif",
+    image: "/poincare.jpg",
+    imageAlt: "Portrait of Henri Poincaré",
   },
   {
     slug: "iam572-rkhs",
     code: "IAM775",
     title: "Reproducing Kernel Hilbert Spaces",
     description:
-      "Mathematical foundations of reproducing kernel Hilbert spaces with applications to machine learning and approximation theory.",
+      "Mathematical foundations of reproducing kernel Hilbert spaces.",
     level: "Graduate",
     semester: "Spring 2024",
     status: "previous",
     topics: ["Functional Analysis", "Kernel Methods", "Approximation Theory"],
     image: "/Hilbert.jpg",
+    imageAlt: "Portrait of David Hilbert",
   },
 ];
 
@@ -166,61 +152,4 @@ export const subcategoryTree: Record<string, string[]> = {
   ],
 };
 
-export const blogCards: BlogCard[] = [
-  {
-    slug: "what-is-an-explanation",
-    title: "What is an explanation?",
-    description:
-      "Climb an explanation ladder: saliency, counterfactuals, causal claims, formal guarantees.",
-    href: "/pieces/what-is-an-explanation/",
-    image: "/stairs.gif",
-    date: "2026-07-09",
-    categories: ["XAI", "Philosophy"],
-    subcategories: ["Philosophy of AI", "Philosophy of mind"],
-    status: "published",
-  },
-  {
-    slug: "types-as-constraints-demo",
-    title: "Types as constraints",
-    description:
-      "A playable sketch of type refinement: drag the precision dial and watch what gets forbidden.",
-    href: "/blog/types-as-constraints-demo/",
-    image: "/hypnosis.gif",
-    date: "2026-08-12",
-    categories: ["Type Theory"],
-    subcategories: [
-      "Intuitionistic type theory",
-      "Dependent types",
-      "Martin-Löf type theory",
-      "Propositions as types",
-    ],
-    status: "published",
-  },
-  {
-    slug: "causal-structures",
-    title: "Causal Structures in Neural Networks",
-    description:
-      "Do-calculus as an epistemic tool for reading model decisions, not a dashboard feature.",
-    href: "/blog/causal-structures/",
-    image: "/200w.gif",
-    date: "2026-07-02",
-    categories: ["Causality", "Category Theory"],
-    status: "forthcoming",
-  },
-  {
-    slug: "formal-interpretability",
-    title: "Formal Methods in ML Interpretability",
-    description:
-      "What would it mean for an explanation to be correct, not merely persuasive?",
-    href: "/blog/formal-interpretability/",
-    image: "/hypnosis.gif",
-    date: "2026-08-03",
-    categories: ["XAI", "Type Theory"],
-    subcategories: [
-      "Homotopy type theory",
-      "Intuitionistic type theory",
-      "Identity types",
-    ],
-    status: "forthcoming",
-  },
-];
+export const blogCards: BlogCard[] = [];
