@@ -58,7 +58,15 @@ function CourseCard({
     <Link href={`/courses/${course.slug}/`} className={styles.card}>
       <span className={styles.media}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={course.image} alt={course.imageAlt} />
+        <img
+          src={course.image}
+          alt={course.imageAlt}
+          style={
+            course.imagePosition
+              ? { objectPosition: course.imagePosition }
+              : undefined
+          }
+        />
       </span>
       <div className={styles.cardBody}>
         <p className={styles.code}>

@@ -145,6 +145,88 @@ button {
   color: var(--ink-muted);
 }
 
+.prose div.course-more {
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5.4vw, 3.15rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.prose .course-more a {
+  overflow-wrap: anywhere;
+}
+
+.prose .now,
+.prose .note {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+}
+
+.prose .now {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.prose .note {
+  color: var(--ink-muted);
+}
+
+.prose .sheet-wrap {
+  overflow-x: auto;
+}
+
+.prose table.sheet {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+}
+
+.prose table.sheet th,
+.prose table.sheet td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.prose table.sheet th {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.prose table.sheet td:first-child {
+  width: 13.5rem;
+  color: var(--ink);
+}
+
+.prose table.sheet td:last-child {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+.prose table.sheet td.none {
+  color: var(--ink-faint);
+}
+
+.prose table.sheet tr.week td {
+  border-top: 1px solid var(--border-strong);
+}
+
 .prose strong {
   color: var(--ink);
   font-weight: 600;

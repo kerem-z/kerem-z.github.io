@@ -3,6 +3,10 @@
   max-width: var(--prose);
 }
 
+.wide {
+  max-width: 52rem;
+}
+
 .header {
   margin-bottom: 2.25rem;
 }

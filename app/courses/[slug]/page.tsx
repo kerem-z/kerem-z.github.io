@@ -31,21 +31,17 @@ export default async function CourseDetailPage({ params }: Props) {
   const meta = courses.find((item) => item.slug === slug);
 
   return (
-    <main className={`${styles.main} fade-up`}>
+    <main className={`${styles.main} ${styles.wide} fade-up`}>
       <header className={styles.header}>
         <p className="kicker">Courses</p>
         <h1 className={styles.title}>{course.title}</h1>
-        <p className={styles.meta}>
-          {meta ? (
-            <>
-              <span>{meta.semester}</span>
-              <span aria-hidden>·</span>
-              <span>{meta.level}</span>
-              <span aria-hidden>·</span>
-            </>
-          ) : null}
-          <span>{course.readingTime}</span>
-        </p>
+        {meta ? (
+          <p className={styles.meta}>
+            <span>{meta.semester}</span>
+            <span aria-hidden>·</span>
+            <span>{meta.level}</span>
+          </p>
+        ) : null}
         {course.description ? (
           <p className={styles.deck}>{course.description}</p>
         ) : null}

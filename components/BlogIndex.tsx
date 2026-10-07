@@ -6,6 +6,7 @@ import { formatDate } from "@/lib/dates";
 import {
   blogCards,
   categoryTree,
+  onProgress,
   subcategoryTree,
   type BlogCard,
 } from "@/lib/site";
@@ -204,7 +205,7 @@ export function BlogIndex() {
     return (
       <main className={`${styles.main} fade-up`}>
         <h1 className="sr-only">Blog</h1>
-        <p className={styles.empty}>Nothing here yet.</p>
+        <OnProgress />
       </main>
     );
   }
@@ -454,6 +455,32 @@ export function BlogIndex() {
       {posts.length === 0 ? (
         <p className={styles.empty}>Nothing in this topic yet.</p>
       ) : null}
+      <OnProgress />
     </main>
+  );
+}
+
+function OnProgress() {
+  if (onProgress.length === 0) return null;
+
+  return (
+    <section className={styles.progress} aria-labelledby="on-progress-title">
+      <h2 id="on-progress-title" className={styles.progressTitle}>
+        On Progress
+      </h2>
+      <ul className={styles.progressList}>
+        {onProgress.map((item) => (
+          <li key={item.title}>
+            <figure className={styles.notice}>
+              <span className={styles.media}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={item.image} alt={item.imageAlt} />
+              </span>
+              <figcaption className={styles.caption}>{item.title}</figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

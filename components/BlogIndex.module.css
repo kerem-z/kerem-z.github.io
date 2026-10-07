@@ -340,6 +340,41 @@
   font-size: 0.78rem;
 }
 
+.progress {
+  max-width: 40rem;
+}
+
+.progressTitle {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.progressList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.notice {
+  display: grid;
+  grid-template-columns: 7.25rem minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: center;
+  margin: 0;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.caption {
+  font-size: 1.18rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
 @keyframes branch-in {
   from {
     opacity: 0;
@@ -399,7 +434,8 @@
     gap: 0.65rem;
   }
 
-  .card {
+  .card,
+  .notice {
     grid-template-columns: 5.2rem 1fr;
     gap: 0.85rem;
   }

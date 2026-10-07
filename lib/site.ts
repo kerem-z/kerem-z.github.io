@@ -70,6 +70,7 @@ export type CourseMeta = {
   topics: string[];
   image: string;
   imageAlt: string;
+  imagePosition?: string;
 };
 
 export const courses: CourseMeta[] = [
@@ -153,3 +154,28 @@ export const subcategoryTree: Record<string, string[]> = {
 };
 
 export const blogCards: BlogCard[] = [];
+
+export type OnProgressItem = {
+  title: string;
+  image: string;
+  imageAlt: string;
+};
+
+/** Notices for work that is not a post yet. */
+export const onProgress: OnProgressItem[] = [
+  {
+    title: "Symbol Grounding Problem",
+    image: "/symbol-grounding.gif",
+    imageAlt: "Illustration of the symbol grounding problem",
+  },
+  {
+    title: "Chinese Room Argument",
+    image: "/chinese-room.gif",
+    imageAlt: "The Chinese room",
+  },
+  {
+    title: "On Self-Reference",
+    image: "/escher-drawing-hands.jpg",
+    imageAlt: "M. C. Escher, Drawing Hands",
+  },
+];
