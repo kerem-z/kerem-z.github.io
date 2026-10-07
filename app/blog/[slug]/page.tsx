@@ -11,8 +11,14 @@ import styles from "../../article.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return getAllSlugs("blog").map((slug) => ({ slug }));
+  const slugs = getAllSlugs("blog");
+  // Static export treats an empty list as a missing generateStaticParams().
+  return slugs.length > 0
+    ? slugs.map((slug) => ({ slug }))
+    : [{ slug: "_empty" }];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
