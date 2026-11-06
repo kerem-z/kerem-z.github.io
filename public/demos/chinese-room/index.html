@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shapes under the door</title>
+  <meta name="description" content="A draft of the Chinese room. Match shapes with a rule book, then read the same exchange from outside.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <script src="https://distill.pub/template.v2.js"></script>
+  <link rel="stylesheet" href="../interactive-research-demo/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#article">Skip to the post</a>
+
+  <d-front-matter>
+    <script type="text/json">
+    {
+      "title": "Shapes under the door",
+      "description": "A draft of the Chinese room.",
+      "authors": [
+        {"author": "Kerem Zengin", "authorURL": "https://kerem-z.github.io/"}
+      ]
+    }
+    </script>
+  </d-front-matter>
+
+  <d-title>
+    <h1>Shapes under the door</h1>
+    <p class="post-meta"><a href="/">Kerem Zengin</a> · <time datetime="2026-11-04">4 November 2026</time></p>
+  </d-title>
+
+  <d-article id="article">
+    <p class="mock-banner"><b>Draft.</b> A clickable sketch of Searle’s Chinese room. The story is the famous one. The page does not settle it.</p>
+
+    <div class="tldr">
+      <b>TL;DR</b>
+      <p>You sit in a room with a book of rules. Slips of paper come in covered in shapes. The book says which shape to send back. From outside, the exchange looks like a conversation. From inside, you never needed to know what any shape meant.</p>
+      <p>That is the whole pressure of the argument: a procedure can pass a test for understanding and still be only a procedure.</p>
+    </div>
+
+    <figure class="teaser-fig">
+      <div class="teaser">
+        <div class="tz-panel">
+          <div class="tz-step">Inside</div>
+          <div class="tz-task">A slip comes under the door.</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#fff;font-size:22px;">○ □</div>
+          <div class="tz-do">You look up the pair in the book.</div>
+          <div class="tz-out"><span class="tz-big">Rule</span> <span class="tz-note">shape to shape</span></div>
+        </div>
+        <div class="tz-panel">
+          <div class="tz-step">Hand back</div>
+          <div class="tz-task">The book names the reply.</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#fff;font-size:22px;">△</div>
+          <div class="tz-do">You copy it. You do not translate it.</div>
+          <div class="tz-out"><span class="tz-big">Slip</span> <span class="tz-note">goes back out</span></div>
+        </div>
+        <div class="tz-panel">
+          <div class="tz-step">Outside</div>
+          <div class="tz-task">Someone reads both slips as English.</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#fff;font-family:Source Sans 3,sans-serif;font-size:14px;padding:8px;text-align:center;">“Is the door shut?” “Yes.”</div>
+          <div class="tz-do">The test is passed. The room did not need a meaning.</div>
+          <div class="tz-out"><span class="tz-big">Talk</span> <span class="tz-note">from the hallway</span></div>
+        </div>
+      </div>
+    </figure>
+
+    <h2>Work the book</h2>
+    <p>Pick a slip. The rule that matches it lights up. Send back the shape the rule names. Wrong shapes are refused. When the right one goes out, the hallway can be read in English. The English was never in the book you used.</p>
+
+    <figure class="demo" data-room>
+      <div class="switch" role="group" aria-label="Incoming slip" data-slips></div>
+      <div class="pattern-layout">
+        <div>
+          <p class="trace" data-rule-list></p>
+        </div>
+        <div>
+          <p class="trace" data-inside></p>
+          <div class="switch" role="group" aria-label="Shape to hand back" data-replies></div>
+        </div>
+      </div>
+      <p class="trace" data-outside hidden></p>
+      <figcaption><b>Figure 1.</b> Three rules, three slips. The shapes are a stand-in for a writing you cannot read. John Searle’s version uses Chinese, in “Minds, Brains, and Programs,” <i>Behavioral and Brain Sciences</i> 3 (1980).</figcaption>
+    </figure>
+
+    <h2>Who is supposed to understand?</h2>
+    <p>Searle’s claim is that the person in the room does not understand, and that a program is in the same spot: syntax in, syntax out. A common reply, the systems reply, says the person is the wrong place to look. The understanding, if there is any, belongs to the whole room: person, book, slips, and door.</p>
+    <p>Another reply, the robot reply, says the room is too closed. Hook the procedure to a body that can see the door and the shapes might stop being only shapes. This page can show the two descriptions. It cannot decide which one is right. The Stanford Encyclopedia entry on the <a href="https://plato.stanford.edu/entries/chinese-room/">Chinese room</a> is the longer map of the replies.</p>
+
+    <figure class="demo" data-who>
+      <div class="switch" role="group" aria-label="Where to look for understanding">
+        <button type="button" data-who="person" aria-pressed="true">The person</button>
+        <button type="button" data-who="room" aria-pressed="false">The whole room</button>
+        <button type="button" data-who="robot" aria-pressed="false">A robot body</button>
+      </div>
+      <p class="trace" data-who-note></p>
+      <figcaption><b>Figure 2.</b> Three places people have looked for the understanding. Switching the label does not add a new fact. It only moves the question.</figcaption>
+    </figure>
+
+    <p><a href="/blog/" target="_top">Back to the blog</a></p>
+  </d-article>
+
+  <script src="js/room.js"></script>
+</body>
+</html>

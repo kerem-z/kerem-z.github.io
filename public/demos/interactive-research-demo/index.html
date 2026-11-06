@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A toy network, a stuck puck, and a score that is not real</title>
+  <meta name="description" content="A design mock of an interactive research note. The widgets work. The numbers are invented.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <script src="https://distill.pub/template.v2.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]] }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#article">Skip to the note</a>
+
+  <d-front-matter>
+    <script type="text/json">
+    {
+      "title": "A toy network, a stuck puck, and a score that is not real",
+      "description": "A design mock of an interactive research note. The widgets work. The numbers are invented.",
+      "authors": [
+        {"author": "Kerem Zengin", "authorURL": "https://kerem-z.github.io/"}
+      ]
+    }
+    </script>
+  </d-front-matter>
+
+  <d-title>
+    <h1>A toy network, a stuck puck, and a score that is not real</h1>
+    <p class="post-meta"><a href="/">Kerem Zengin</a> · <time datetime="2026-11-04">4 November 2026</time></p>
+  </d-title>
+
+  <d-article id="article">
+    <p class="mock-banner"><b>Mock.</b> The controls change the pictures. Nothing on this page was measured, trained, or claimed as a result.</p>
+
+    <div class="tldr">
+      <b>TL;DR</b>
+      <p>This page uses the same kinds of controls as <a href="https://rikiyat.github.io/blog/weight-space-programming/">Sparks of Weight-Space Programming</a>: a Read / Fix / Improve teaser, a Setup drawer, and figures that change when you press a button. The writing, the pictures, and the numbers are a mock. They are not that post’s results.</p>
+      <p>The teaser’s list of numbers is a file. The puck follows a path written in the script. The score is the formula <span>\(s(n)=12+29(1-e^{-n/18})\)</span>. Dragging the slider evaluates that formula. It does not train anything.</p>
+    </div>
+
+    <figure class="teaser-fig">
+      <div class="teaser">
+        <div class="tz-panel">
+          <div class="tz-step">Read</div>
+          <div class="tz-task">Which rows were marked in this made-up list?</div>
+          <div class="tz-vis tz-wall" role="img" aria-label="Scrolling rows of invented numbers. A few cells are highlighted."></div>
+          <div class="tz-do">The page scrolls a JSON file and paints the marked cells.</div>
+          <div class="tz-out"><span class="tz-big">8 rows</span> <span class="tz-note">scripted highlight</span></div>
+        </div>
+        <div class="tz-panel">
+          <div class="tz-step">Fix</div>
+          <div class="tz-task">The gray puck stops at the block. The green one walks around it.</div>
+          <div class="tz-vis tz-scene" role="img" aria-label="A gray puck runs into a block. A green puck takes a path over the block and onward to a dot.">
+            <svg viewBox="0 0 220 100" aria-hidden="true">
+              <rect x="108" y="36" width="28" height="30" fill="#d5d8de"></rect>
+              <path d="M28 51 H108" fill="none" stroke="#8b929b" stroke-width="1.5" stroke-dasharray="4 3"></path>
+              <path d="M28 51 V18 H168 V51 H190" fill="none" stroke="#8fc8a9" stroke-width="1.5" stroke-dasharray="4 3"></path>
+              <circle cx="196" cy="51" r="4" fill="#118659"></circle>
+              <circle r="6" fill="#5c6570">
+                <animateMotion dur="2.6s" repeatCount="indefinite" path="M28 51 H108"></animateMotion>
+              </circle>
+              <circle r="6" fill="#118659">
+                <animateMotion dur="3.4s" repeatCount="indefinite" path="M28 51 V18 H168 V51 H190"></animateMotion>
+              </circle>
+            </svg>
+          </div>
+          <div class="tz-do">Both paths are drawn in the page. Neither one is a policy.</div>
+          <div class="tz-out"><span class="tz-big">Around</span> <span class="tz-note">a path, not a result</span></div>
+        </div>
+        <div class="tz-panel">
+          <div class="tz-step">Improve</div>
+          <div class="tz-task">Let a made-up score climb from 12 to 39.2.</div>
+          <div class="tz-bars" data-from="12" data-to="39.2" data-max="50">
+            <div class="tz-col">
+              <div class="tz-bar tz-bar-before"><span class="tz-v">12</span></div>
+              <div class="tz-bl">start</div>
+            </div>
+            <div class="tz-col">
+              <div class="tz-bar tz-bar-after"><span class="tz-v">12</span></div>
+              <div class="tz-bl">formula</div>
+            </div>
+          </div>
+          <div class="tz-do">The bar eases along \(s(50)\). The same formula is plotted below.</div>
+          <div class="tz-out"><span class="tz-big" data-teaser-score>12.0</span> <span class="tz-note">at n = 50, invented</span></div>
+        </div>
+      </div>
+    </figure>
+
+    <h2>What you can click</h2>
+    <p>Five widgets follow. Each one keeps a control and a picture in step.</p>
+    <ol>
+      <li><b>Switch a picture.</b> Ring, Steps, and Cross are three formulas on a 12×12 grid.</li>
+      <li><b>Play a path.</b> One path hits the block. The other goes around it.</li>
+      <li><b>Drag a score.</b> The slider, the chart, and the table share one expression.</li>
+      <li><b>Switch a grid.</b> Sparse, Single, and Other paint different cells.</li>
+      <li><b>Switch two bars.</b> Question and Guess move the same two shares.</li>
+    </ol>
+
+    <h2>Three pictures, one switch</h2>
+    <p>Press a name. The grid redraws from that formula, and the note beside it changes to the matching sentence. The sentence is stored next to the button. It is not inferred from the pixels, though the pixels do show the shape the sentence describes.</p>
+
+    <figure class="demo" data-patterns>
+      <div class="fig-tools">
+        <button type="button" data-expand>Expand</button>
+        <button type="button" data-download-png>Download PNG</button>
+      </div>
+      <details class="fig-setup">
+        <summary>Setup</summary>
+        <div class="fig-setup-body">
+          <ul>
+            <li><b>Grid:</b> 12 by 12 cells, drawn in the browser.</li>
+            <li><b>Ring:</b> a bump at distance 3.7 from the center.</li>
+            <li><b>Steps:</b> dark when the column index is greater than the row index.</li>
+            <li><b>Cross:</b> bright where a cell is close to the middle row or the middle column.</li>
+            <li><b>Not included:</b> a network, a training run, or a guess from a model.</li>
+          </ul>
+        </div>
+      </details>
+      <div class="switch" role="group" aria-label="Pattern">
+        <button type="button" data-pattern="ring" aria-pressed="true">Ring</button>
+        <button type="button" data-pattern="steps" aria-pressed="false">Steps</button>
+        <button type="button" data-pattern="cross" aria-pressed="false">Cross</button>
+      </div>
+      <div class="pattern-layout">
+        <canvas class="heat" width="480" height="480" aria-label="Twelve by twelve grid for the selected formula."></canvas>
+        <p class="trace" data-pattern-note></p>
+      </div>
+      <figcaption><b>Figure 1.</b> A switchable picture. Ring, Steps, and Cross are formulas in the page script. The download saves the grid currently on screen.</figcaption>
+    </figure>
+
+    <h2>A puck that takes the path you pick</h2>
+    <p>Stuck sends the puck right until it meets the block. Edited sends it up, across, and down to the green dot. Press Play to run the chosen path once. Pressing Stuck or Edited again puts the puck back at the start.</p>
+
+    <figure class="demo" data-scene>
+      <div class="fig-tools">
+        <button type="button" data-expand>Expand</button>
+        <button type="button" data-download-png>Download PNG</button>
+      </div>
+      <details class="fig-setup">
+        <summary>Setup</summary>
+        <div class="fig-setup-body">
+          <ul>
+            <li><b>Scene:</b> a block, a start, and a green dot, in one canvas.</li>
+            <li><b>Stuck:</b> a straight move from x = 0.12 to x = 0.46.</li>
+            <li><b>Edited:</b> up to y = 0.22, across to x = 0.78, down, then on to x = 0.88.</li>
+            <li><b>Play:</b> one pass of about 2.4 seconds. With reduced motion, Play jumps to the end.</li>
+          </ul>
+        </div>
+      </details>
+      <div class="switch" role="group" aria-label="Path">
+        <button type="button" data-mode="stuck" aria-pressed="true">Stuck</button>
+        <button type="button" data-mode="edited" aria-pressed="false">Edited</button>
+        <button type="button" data-play>Play</button>
+      </div>
+      <canvas class="scene" width="640" height="270" aria-label="A puck moving on the selected path, toward or around a block."></canvas>
+      <p class="scene-readout" data-scene-status></p>
+      <figcaption><b>Figure 2.</b> Two scripted paths. The gray story stops at the block. The green story goes around it. This is an animation, not a controller.</figcaption>
+    </figure>
+
+    <h2>One formula, three places</h2>
+    <p>The score is</p>
+    \[
+      s(n)=12+29\left(1-e^{-n/18}\right),
+    \]
+    <p>with \(n\) from 0 to 50. The slider evaluates it. The curve is the same expression. The table is four samples of it, stored in <code>data/budget.json</code>, and a row lights up when the slider sits on that sample. The word in the last column is there so the table cannot be mistaken for a benchmark.</p>
+
+    <figure class="demo" data-budget>
+      <div class="fig-tools">
+        <button type="button" data-expand>Expand</button>
+        <button type="button" data-download-svg>Download SVG</button>
+      </div>
+      <details class="fig-setup">
+        <summary>Setup</summary>
+        <div class="fig-setup-body">
+          <ul>
+            <li><b>Curve:</b> \(s(n)\) as above, sampled at every integer for the line.</li>
+            <li><b>Table:</b> n = 0, 10, 25, 50, from a local JSON file.</li>
+            <li><b>Slider:</b> any integer from 0 to 50. The readout is computed, not looked up.</li>
+          </ul>
+        </div>
+      </details>
+      <div class="budget-controls">
+        <label for="budget">Budget n</label>
+        <input id="budget" type="range" min="0" max="50" step="1" value="0">
+        <output for="budget">s(0) = 12.00</output>
+      </div>
+      <svg class="chart" viewBox="0 0 640 280" role="img" aria-label="Line chart of the made-up score from n equals 0 to 50."></svg>
+      <table class="scores">
+        <thead>
+          <tr><th>n</th><th>s(n)</th><th>Status</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <figcaption><b>Figure 3.</b> A synthetic curve. Moving the slider moves the cursor. It does not fit a model.</figcaption>
+    </figure>
+
+    <h2>A grid you can point at</h2>
+    <p>Eight cells are painted. The rest are empty. Point at a cell, or focus it from the keyboard, and the line under the grid names the row and the column.</p>
+
+    <figure class="demo">
+      <div class="cells" data-cells></div>
+      <p class="cell-readout" data-cell-readout>Point at a cell.</p>
+      <figcaption><b>Figure 4.</b> Twenty-four cells. The painted ones are listed in the script. Hovering reads the row and the column.</figcaption>
+    </figure>
+
+    <h2>A grid that follows the button</h2>
+    <p>The reference post switches a small grid between three cases. This one does the same job with made-up marks. Press a case. The painted cells and the sentence change together. Nothing was measured.</p>
+
+    <figure class="demo" data-cases>
+      <details class="fig-setup">
+        <summary>Setup</summary>
+        <div class="fig-setup-body">
+          <ul>
+            <li><b>Grid:</b> 4 rows by 6 columns.</li>
+            <li><b>Sparse:</b> three cells, at row 2 column 1, row 3 column 1, and row 3 column 5.</li>
+            <li><b>Single:</b> one cell, at row 3 column 3.</li>
+            <li><b>Other:</b> one cell, at row 3 column 1.</li>
+          </ul>
+        </div>
+      </details>
+      <div class="switch" role="group" aria-label="Which cells are painted">
+        <button type="button" data-case="sparse" aria-pressed="true">Sparse</button>
+        <button type="button" data-case="single" aria-pressed="false">Single</button>
+        <button type="button" data-case="other" aria-pressed="false">Other</button>
+      </div>
+      <div class="cells" data-case-grid></div>
+      <p class="trace" data-case-note></p>
+      <figcaption><b>Figure 5.</b> The same switch as a “which cells light up” figure. The cells are listed in the script.</figcaption>
+    </figure>
+
+    <h2>Two bars, one choice</h2>
+    <p>The reference post also sets two shares side by side and lets the reader compare them. Here the shares are a formula of the button. “Question” puts most of the bar on the left. “Guess” puts most of it on the right.</p>
+
+    <figure class="demo" data-look>
+      <div class="switch" role="group" aria-label="Which bar is tall">
+        <button type="button" data-look="question" aria-pressed="true">Question</button>
+        <button type="button" data-look="guess" aria-pressed="false">Guess</button>
+      </div>
+      <div class="look-bars" data-look-bars>
+        <div class="tz-col">
+          <div class="tz-bar look-q"><span class="tz-v" data-look-q>86</span></div>
+          <div class="tz-bl">question</div>
+        </div>
+        <div class="tz-col">
+          <div class="tz-bar look-g"><span class="tz-v" data-look-g>9</span></div>
+          <div class="tz-bl">guess</div>
+        </div>
+      </div>
+      <p class="trace" data-look-note></p>
+      <figcaption><b>Figure 6.</b> Two shares that add to 95, not to 100. The missing 5 is unused on purpose, so the picture cannot be read as a measured split.</figcaption>
+    </figure>
+
+    <h2>A note on the numbers</h2>
+    <p>The pictures redraw, and the slider matches the formula. The story around them is made up. Nothing here was measured or trained. The post this layout follows is <a href="https://rikiyat.github.io/blog/weight-space-programming/">Takehi, Teoh, Zhang, and Khattab, November 2026</a>.</p>
+    <p><a href="/blog/" target="_top">Back to the blog</a></p>
+  </d-article>
+
+  <script src="js/teaser.js"></script>
+  <script src="js/patterns.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/budget.js"></script>
+  <script src="js/page.js"></script>
+  <script src="js/cases.js"></script>
+</body>
+</html>

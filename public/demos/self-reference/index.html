@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A sentence that talks about itself</title>
+  <meta name="description" content="A draft on self-reference: a sentence that flips when you assign it a truth value, and a short program that prints its own text.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <script src="https://distill.pub/template.v2.js"></script>
+  <link rel="stylesheet" href="../interactive-research-demo/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#article">Skip to the post</a>
+
+  <d-front-matter>
+    <script type="text/json">
+    {
+      "title": "A sentence that talks about itself",
+      "description": "A draft on self-reference.",
+      "authors": [
+        {"author": "Kerem Zengin", "authorURL": "https://kerem-z.github.io/"}
+      ]
+    }
+    </script>
+  </d-front-matter>
+
+  <d-title>
+    <h1>A sentence that talks about itself</h1>
+    <p class="post-meta"><a href="/">Kerem Zengin</a> · <time datetime="2026-11-04">4 November 2026</time></p>
+  </d-title>
+
+  <d-article id="article">
+    <p class="mock-banner"><b>Draft.</b> A short tour of self-reference: a liar sentence, a loop drawn for this page, and a program that prints its own source. Nothing here is a proof.</p>
+
+    <div class="tldr">
+      <b>TL;DR</b>
+      <p>Most sentences talk about something else. A self-referential one talks about its own text. That single turn is enough to make a sentence that cannot sit still as true or false, and enough to write a program whose output is a copy of the program.</p>
+    </div>
+
+    <figure class="teaser-fig">
+      <div class="teaser">
+        <div class="tz-panel">
+          <div class="tz-step">Liar</div>
+          <div class="tz-task">“This sentence is false.”</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#fff;font-family:Source Sans 3,sans-serif;font-size:15px;">true → false → true</div>
+          <div class="tz-do">Each label hands you the other one.</div>
+          <div class="tz-out"><span class="tz-big">Flip</span> <span class="tz-note">no resting place</span></div>
+        </div>
+        <div class="tz-panel">
+          <div class="tz-step">Loop</div>
+          <div class="tz-task">Two marks, each the reason the other is there.</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#fff;">
+            <svg viewBox="0 0 120 70" width="140" height="80" aria-hidden="true">
+              <rect x="8" y="18" width="36" height="28" fill="none" stroke="#222"></rect>
+              <rect x="76" y="18" width="36" height="28" fill="none" stroke="#222"></rect>
+              <path d="M44 26 C60 8 60 8 76 26" fill="none" stroke="#118659"></path>
+              <path d="M76 42 C60 62 60 62 44 42" fill="none" stroke="#118659"></path>
+            </svg>
+          </div>
+          <div class="tz-do">A strange loop is this picture, stretched.</div>
+          <div class="tz-out"><span class="tz-big">Cycle</span> <span class="tz-note">drawn for the page</span></div>
+        </div>
+        <div class="tz-panel">
+          <div class="tz-step">Quine</div>
+          <div class="tz-task">A program with a hole, filled by a quote of itself.</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#fff;font-family:JetBrains Mono,monospace;font-size:13px;">text = “text = ?”</div>
+          <div class="tz-do">Run it and the output is the program.</div>
+          <div class="tz-out"><span class="tz-big">Copy</span> <span class="tz-note">of its own source</span></div>
+        </div>
+      </div>
+    </figure>
+
+    <h2>Assign a truth value</h2>
+    <p>The sentence below says of itself that it is false. Pick a value. The note under it is what that choice forces. This is the liar paradox in one line. It is not a puzzle with a hidden third answer on this page.</p>
+
+    <figure class="demo" data-liar>
+      <p class="trace"><b>“This sentence is false.”</b></p>
+      <div class="switch" role="group" aria-label="Try a truth value">
+        <button type="button" data-value="true">Suppose it is true</button>
+        <button type="button" data-value="false">Suppose it is false</button>
+      </div>
+      <p class="trace" data-liar-note>Pick a side. The sentence will hand you the other one.</p>
+      <figcaption><b>Figure 1.</b> A sentence with no stable truth value, if the usual rules for “true” and “false” both apply. The Stanford Encyclopedia has a survey under <a href="https://plato.stanford.edu/entries/self-reference/">self-reference</a>.</figcaption>
+    </figure>
+
+    <h2>Two drawers</h2>
+    <p>The picture on the blog index is Escher’s <i>Drawing Hands</i>: each hand is drawn by the other. The drawing here is a stand-in, not a copy of that print. Two boxes. Each arrow says the box it leaves is what draws the box it enters. Follow either arrow and you are back where you started. Douglas Hofstadter’s name for this kind of climb that returns to its start is a strange loop.</p>
+
+    <figure class="demo" data-loop>
+      <svg class="chart" viewBox="0 0 340 180" role="img" aria-label="Two boxes. A green arrow runs from each to the other."></svg>
+      <p class="trace" data-loop-note></p>
+      <figcaption><b>Figure 2.</b> An original loop for this draft. The Escher print stays on the blog card, where it already lives.</figcaption>
+    </figure>
+
+    <h2>A program that prints itself</h2>
+    <p>A quine is a program whose output is its own source. The usual trick is a template with a hole. The template says: fill the hole with a quoted copy of me. Press the button and the hole is filled. The text of the program and the text it prints are the same string. Nothing is executed beyond that fill.</p>
+
+    <figure class="demo" data-quine>
+      <div class="fig-tools">
+        <button type="button" data-run>Fill the hole</button>
+      </div>
+      <p class="trace" data-program></p>
+      <p class="trace" data-output></p>
+      <figcaption><b>Figure 3.</b> The hole is the percent sign. Filling it once produces a program that would print the filled text. The match is the point.</figcaption>
+    </figure>
+
+    <p><a href="/blog/" target="_top">Back to the blog</a></p>
+  </d-article>
+
+  <script src="js/loop.js"></script>
+</body>
+</html>

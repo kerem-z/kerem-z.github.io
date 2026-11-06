@@ -1,0 +1,40 @@
+.tableGrid,
+.specGrid {
+  display: grid;
+  grid-template-columns: minmax(230px, 368px) minmax(0, 1fr);
+  gap: 1.5rem 2rem;
+  align-items: start;
+}
+
+.specGrid {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+@media (max-width: 720px) {
+  .tableGrid,
+  .specGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.table {
+  max-width: 368px;
+}
+
+.keyTrain,
+.keyTest {
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  margin: 0 0.3rem 0.2rem 0.6rem;
+  vertical-align: middle;
+  background: var(--ink-faint);
+}
+
+.keyTrain {
+  margin-left: 0;
+}
+
+.keyTest {
+  background: var(--accent);
+}

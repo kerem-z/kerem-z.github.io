@@ -1,0 +1,7 @@
+.frame {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 7rem);
+  border: 0;
+  background: #fff;
+}

@@ -1,0 +1,406 @@
+/* --- Figure 1: the walk ----------------------------------------------- */
+
+.walkGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 1.25rem 2rem;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .walkGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.entry {
+  min-width: 0;
+  min-height: 12rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  background: var(--cr-paper, var(--widget-bg));
+  box-shadow: 1px 1px 0 var(--border);
+}
+
+.headword {
+  margin-bottom: 0.5rem;
+  font-size: 1.9rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.definition {
+  margin: 0 !important;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--ink) !important;
+}
+
+.defLink {
+  padding: 0 0.05em;
+  border: 0;
+  border-bottom: 1px solid var(--accent);
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s var(--ease);
+}
+
+.defLink:hover,
+.defLink:focus-visible {
+  background: var(--accent-soft);
+  outline: none;
+}
+
+.defSeen {
+  border-bottom-style: dashed;
+}
+
+.glue {
+  display: inline-flex;
+  gap: 0.15rem;
+  margin: 0 0.25rem;
+  color: var(--ink-muted);
+  vertical-align: middle;
+}
+
+.walkNote {
+  min-height: 1.5em;
+  margin: 0.75rem 0 0 !important;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--cr-neg, var(--accent)) !important;
+}
+
+.trail {
+  min-width: 0;
+}
+
+.trailList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+}
+
+.trailList li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.trailList li + li::before {
+  content: "→";
+  margin: 0 0.35rem;
+  color: var(--ink-faint);
+}
+
+.trailRepeat {
+  color: var(--cr-neg, var(--accent));
+}
+
+.trailHere {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.again {
+  font-size: 0.62rem;
+  opacity: 0.8;
+}
+
+/* --- the graph -------------------------------------------------------- */
+
+.graphWrap {
+  width: 100%;
+  min-width: 0;
+}
+
+.graph {
+  display: block;
+  overflow: visible;
+}
+
+.edge {
+  stroke: var(--border-strong);
+  stroke-width: 0.8;
+  transition: stroke 0.2s var(--ease), stroke-width 0.2s var(--ease);
+}
+
+.edgeDef {
+  stroke: var(--accent);
+  stroke-width: 1.4;
+}
+
+.edgeUse {
+  stroke: var(--ink-faint);
+  stroke-width: 1.1;
+}
+
+.edgeLoop {
+  stroke: var(--cr-neg, #a4482a);
+  stroke-width: 1.8;
+}
+
+.arrowHead {
+  fill: var(--ink-muted);
+}
+
+.node {
+  color: var(--ink);
+  outline: none;
+  transition: opacity 0.35s var(--ease);
+}
+
+.node rect {
+  fill: var(--widget-bg);
+  stroke: var(--border-strong);
+  stroke-width: 1;
+  transition: fill 0.35s var(--ease), stroke 0.35s var(--ease);
+  transition-delay: inherit;
+}
+
+.node text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: currentColor;
+  pointer-events: none;
+  transition: fill 0.35s var(--ease);
+  transition-delay: inherit;
+}
+
+.node svg {
+  pointer-events: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.nodeFocus rect {
+  stroke: var(--ink);
+  stroke-width: 1.6;
+}
+
+.node:focus-visible rect {
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.nodeLoop rect {
+  stroke: var(--cr-neg, #a4482a);
+  stroke-width: 1.6;
+  stroke-dasharray: 3 2;
+}
+
+.grounded {
+  color: var(--widget-bg);
+}
+
+.grounded rect {
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+
+.learned {
+  color: var(--accent);
+}
+
+.learned rect {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+}
+
+.unknown {
+  color: var(--ink-faint);
+}
+
+.unknown rect {
+  stroke: var(--border);
+}
+
+.neutral {
+  color: var(--ink);
+}
+
+.inKernel {
+  color: var(--ink);
+}
+
+.inKernel rect {
+  stroke: var(--ink-muted);
+}
+
+.satellite {
+  color: var(--ink-muted);
+}
+
+.satellite rect {
+  stroke: var(--ink-faint);
+  stroke-dasharray: 2 2;
+}
+
+.pruned {
+  opacity: 0.28;
+}
+
+.tally {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+}
+
+.tally b {
+  color: var(--ink);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.key {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.3rem;
+  vertical-align: -0.05rem;
+  border: 1px solid var(--border-strong);
+}
+
+.keyGrounded {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.keyLearned {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.keyUnknown {
+  background: var(--widget-bg);
+  border-color: var(--border);
+}
+
+.readout {
+  min-height: 3.2em;
+  margin: 0.75rem 0 0 !important;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-muted) !important;
+}
+
+.readout b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.warn {
+  color: var(--cr-neg, var(--ink));
+}
+
+/* --- Figure 3: layers ------------------------------------------------- */
+
+.structGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: 1rem 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .structGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.structTable {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.layer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.1rem 0.5rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink-muted);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s var(--ease), background-color 0.15s var(--ease);
+}
+
+.layer:hover,
+.layer:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.layerOn {
+  border-left-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.layerName {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink);
+}
+
+.layerN {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.layerWhat {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+/* --- small tables in prose -------------------------------------------- */
+
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.compare th,
+.compare td {
+  padding: 0.3rem 0.75rem 0.3rem 0;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  color: var(--ink-muted);
+}
+
+.compare th {
+  font-weight: 400;
+  color: var(--ink-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .node,
+  .node rect,
+  .node text,
+  .edge {
+    transition: none !important;
+  }
+}

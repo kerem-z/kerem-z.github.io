@@ -1,0 +1,367 @@
+.root {
+  --vf-neg: #b4532a;
+  --vf-faint-fill: #e9e4d8;
+}
+
+:global([data-theme="dark"]) .root {
+  --vf-neg: #e2895c;
+  --vf-faint-fill: #2a2925;
+}
+
+.draftNote {
+  padding: 0.75rem 1rem;
+  border-left: 2px solid var(--accent);
+  background: var(--accent-soft);
+  font-size: 0.98rem;
+}
+
+.term {
+  border-bottom: 1px dotted var(--ink-faint);
+  cursor: help;
+  transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+
+.term:hover,
+.term:focus-visible {
+  color: var(--vf-neg);
+  border-color: var(--vf-neg);
+  outline: none;
+}
+
+.inlineBtn {
+  padding: 0 0.15em;
+  border: 0;
+  border-bottom: 1px dashed var(--accent);
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.inlineBtn:hover {
+  background: var(--accent-soft);
+}
+
+.cite {
+  font-size: 0.8em;
+  vertical-align: 0.25em;
+  text-decoration: none;
+  margin-left: 0.1em;
+}
+
+.defn {
+  margin-left: 0;
+  padding-left: 1rem;
+  border-left: 1px solid var(--border-strong);
+}
+
+/* --- figures ---------------------------------------------------------- */
+
+.figure {
+  width: min(54rem, calc(100vw - 3rem));
+  max-width: none;
+  margin: 2rem 0 0;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--widget-bg);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 520px) {
+  .figure {
+    padding: 0.85rem;
+  }
+}
+
+.caption {
+  margin-top: 0.75rem !important;
+  max-width: 54rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-faint) !important;
+}
+
+.caption b {
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 1.25rem 1.75rem;
+  align-items: start;
+}
+
+.halves {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.25rem 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .split,
+  .halves {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.plane {
+  position: relative;
+  min-width: 0;
+}
+
+.canvas {
+  display: block;
+  touch-action: none;
+}
+
+.grab {
+  cursor: grab;
+}
+
+.planeLabel {
+  margin-top: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+
+.side {
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+
+.side p {
+  margin: 0 0 0.6rem;
+}
+
+.panelHead {
+  margin-bottom: 0.4rem;
+  font-size: 0.74rem;
+  color: var(--ink);
+}
+
+.dim {
+  color: var(--ink-faint);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.good {
+  color: var(--accent);
+}
+
+.bad {
+  color: var(--vf-neg);
+}
+
+.verdict {
+  margin-top: 0.75rem !important;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+  color: var(--ink);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.table th {
+  font-weight: 400;
+  text-align: left;
+  color: var(--ink-faint);
+  padding: 0 0.75rem 0.3rem 0;
+}
+
+.table td {
+  padding: 0.12rem 0.75rem 0.12rem 0;
+  white-space: nowrap;
+}
+
+.table td:last-child,
+.table th:last-child {
+  padding-right: 0;
+}
+
+.rowFocus td {
+  color: var(--vf-neg);
+}
+
+.key {
+  display: inline-block;
+  width: 14px;
+  height: 0;
+  margin-right: 0.45rem;
+  vertical-align: middle;
+  border-top: 1.5px solid currentColor;
+}
+
+.keyDash {
+  border-top-style: dashed;
+}
+
+.keyFill {
+  height: 8px;
+  border: 0;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+/* --- controls --------------------------------------------------------- */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+}
+
+.btn {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease);
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.btnOn {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--widget-bg);
+}
+
+.btnOn:hover:not(:disabled) {
+  color: var(--widget-bg);
+}
+
+/* --- interval columns (figure 2) ------------------------------------- */
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+}
+
+@media (max-width: 720px) {
+  .columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.svg {
+  display: block;
+  overflow: visible;
+}
+
+.svg text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  fill: var(--ink-faint);
+}
+
+.row {
+  cursor: default;
+}
+
+.readout {
+  min-height: 2.6em;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- relu (figure 3) -------------------------------------------------- */
+
+.reluSvg {
+  display: block;
+  touch-action: none;
+  user-select: none;
+}
+
+.reluSvg text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  fill: var(--ink-faint);
+}
+
+.handle {
+  cursor: ew-resize;
+}
+
+.handleV {
+  cursor: ns-resize;
+}
+
+.handle:focus-visible,
+.handleV:focus-visible {
+  outline: none;
+}
+
+.handle:focus-visible circle,
+.handleV:focus-visible circle {
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+/* --- branch and bound (figure 5) -------------------------------------- */
+
+.tree {
+  display: block;
+  touch-action: none;
+}
+
+.lbPlot {
+  display: block;
+  margin-top: 0.75rem;
+}
+
+.lbPlot text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  fill: var(--ink-faint);
+}
+
+/* --- references ------------------------------------------------------- */
+
+.refsHead {
+  font-size: 1.1rem !important;
+}
+
+.refs {
+  padding-left: 1.25rem;
+  font-size: 0.92rem;
+}
+
+.refs li {
+  margin: 0.35rem 0;
+}

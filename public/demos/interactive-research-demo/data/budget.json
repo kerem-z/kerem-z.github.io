@@ -1,0 +1,10 @@
+{
+  "note": "Samples of the made-up score s(n) = 12 + 29 (1 - exp(-n / 18)). Not a measurement.",
+  "formula": "12 + 29 * (1 - exp(-n / 18))",
+  "samples": [
+    { "n": 0, "score": 12.0 },
+    { "n": 10, "score": 24.36 },
+    { "n": 25, "score": 33.77 },
+    { "n": 50, "score": 39.2 }
+  ]
+}

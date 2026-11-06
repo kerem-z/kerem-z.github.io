@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Mary had not seen</title>
+  <meta name="description" content="A draft of Jackson's knowledge argument. Mary knows the physical notes about color. Then the door opens.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <script src="https://distill.pub/template.v2.js"></script>
+  <link rel="stylesheet" href="../interactive-research-demo/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#article">Skip to the post</a>
+
+  <d-front-matter>
+    <script type="text/json">
+    {
+      "title": "What Mary had not seen",
+      "description": "A draft of Jackson's knowledge argument.",
+      "authors": [
+        {"author": "Kerem Zengin", "authorURL": "https://kerem-z.github.io/"}
+      ]
+    }
+    </script>
+  </d-front-matter>
+
+  <d-title>
+    <h1>What Mary had not seen</h1>
+    <p class="post-meta"><a href="/">Kerem Zengin</a> · <time datetime="2026-11-04">4 November 2026</time></p>
+  </d-title>
+
+  <d-article id="article">
+    <p class="mock-banner"><b>Draft.</b> Frank Jackson’s thought experiment, drawn small enough to click. The argument is contested. This page shows the step people argue about, and one famous objection.</p>
+
+    <div class="tldr">
+      <b>TL;DR</b>
+      <p>Mary knows every physical fact about color and has never seen a color. Then she sees red. Jackson says she learns something. If that something is a fact, then the physical list was not the whole list.</p>
+    </div>
+
+    <figure class="teaser-fig">
+      <div class="teaser">
+        <div class="tz-panel">
+          <div class="tz-step">The room</div>
+          <div class="tz-task">Black, white, and the notes in between.</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#f4f1ea;">
+            <svg viewBox="0 0 120 70" width="140" height="80" aria-hidden="true">
+              <rect x="20" y="10" width="80" height="50" fill="#fff" stroke="#222"></rect>
+              <rect x="32" y="22" width="28" height="18" fill="#e4e0d8" stroke="#222"></rect>
+            </svg>
+          </div>
+          <div class="tz-do">Books, screens, lectures. No red.</div>
+          <div class="tz-out"><span class="tz-big">Notes</span> <span class="tz-note">complete, on paper</span></div>
+        </div>
+        <div class="tz-panel">
+          <div class="tz-step">The list</div>
+          <div class="tz-task">Wavelengths, cells, words.</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#fff;font-family:Source Sans 3,sans-serif;font-size:14px;padding:8px;text-align:center;">650 nm · L cones · “red”</div>
+          <div class="tz-do">She can pass any exam about color.</div>
+          <div class="tz-out"><span class="tz-big">Facts</span> <span class="tz-note">the physical ones</span></div>
+        </div>
+        <div class="tz-panel">
+          <div class="tz-step">The door</div>
+          <div class="tz-task">She sees a ripe tomato.</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#fff;">
+            <svg viewBox="0 0 80 70" width="90" height="80" aria-hidden="true">
+              <circle cx="40" cy="40" r="18" fill="#c6453a"></circle>
+            </svg>
+          </div>
+          <div class="tz-do">Something arrives that was not a line in the notes.</div>
+          <div class="tz-out"><span class="tz-big">Red</span> <span class="tz-note">what it is like</span></div>
+        </div>
+      </div>
+    </figure>
+
+    <h2>Open the door</h2>
+    <p>The notes stay. Opening the door adds one line, and it is not written in the same ink. Jackson’s claim is that the new line is knowledge she lacked, so knowing all the physical facts is not knowing everything. The papers are “Epiphenomenal Qualia” (1982) and “What Mary Didn’t Know” (1986).</p>
+
+    <figure class="demo" data-mary>
+      <div class="pattern-layout">
+        <div data-room-art></div>
+        <div>
+          <ul class="trace" data-facts></ul>
+        </div>
+      </div>
+      <div class="fig-tools">
+        <button type="button" data-open aria-pressed="false">Open the door</button>
+      </div>
+      <figcaption><b>Figure 1.</b> A grayscale room, then one red disc. The disc is a swatch on the page, not a photograph. The Stanford Encyclopedia treats the argument under <a href="https://plato.stanford.edu/entries/qualia-knowledge/">qualia and the knowledge argument</a>.</figcaption>
+    </figure>
+
+    <h2>Or she learned a skill</h2>
+    <p>The ability reply, associated with Laurence Nemirow and David Lewis, says Mary does not learn a new fact. She learns how to see, remember, and imagine red. A skill can be new without the list of facts being incomplete. The button below swaps the gloss on the line that appeared. The notes do not change.</p>
+
+    <figure class="demo" data-reply>
+      <div class="switch" role="group" aria-label="How to read the new line">
+        <button type="button" data-read="fact" aria-pressed="true">A new fact</button>
+        <button type="button" data-read="skill" aria-pressed="false">A new skill</button>
+      </div>
+      <p class="trace" data-reply-note></p>
+      <figcaption><b>Figure 2.</b> Two readings of the same moment. The draft keeps both. It does not pick a winner.</figcaption>
+    </figure>
+
+    <p><a href="/blog/" target="_top">Back to the blog</a></p>
+  </d-article>
+
+  <script src="js/mary.js"></script>
+</body>
+</html>

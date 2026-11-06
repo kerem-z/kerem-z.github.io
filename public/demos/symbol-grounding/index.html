@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The symbol and the apple</title>
+  <meta name="description" content="A draft blog demo of the symbol grounding problem. A word can point only at other words, or it can also point at an apple.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <script src="https://distill.pub/template.v2.js"></script>
+  <link rel="stylesheet" href="../interactive-research-demo/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#article">Skip to the post</a>
+
+  <d-front-matter>
+    <script type="text/json">
+    {
+      "title": "The symbol and the apple",
+      "description": "A draft blog demo of the symbol grounding problem.",
+      "authors": [
+        {"author": "Kerem Zengin", "authorURL": "https://kerem-z.github.io/"}
+      ]
+    }
+    </script>
+  </d-front-matter>
+
+  <d-title>
+    <h1>The symbol and the apple</h1>
+    <p class="post-meta"><a href="/">Kerem Zengin</a> · <time datetime="2026-11-04">4 November 2026</time></p>
+  </d-title>
+
+  <d-article id="article">
+    <p class="mock-banner"><b>Draft.</b> A demo for the Symbol Grounding post. The writing is a sketch. The two widgets are the part to keep.</p>
+
+    <div class="tldr">
+      <b>TL;DR</b>
+      <p>A symbol can spend its whole life pointing at other symbols. <em>Apple</em> means <em>fruit</em>, <em>fruit</em> means <em>food</em>, and somewhere the list comes back. Nothing in that circle is an apple you could hold.</p>
+      <p>Grounding is a second link: the same word also sits next to the thing, the way the sketch on the blog does. The circle of words can stay. One line leaves it.</p>
+    </div>
+
+    <figure class="teaser-fig">
+      <div class="teaser">
+        <div class="tz-panel">
+          <div class="tz-step">Symbol</div>
+          <div class="tz-task">The mark only names another word.</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#fff;">
+            <svg viewBox="0 0 120 80" width="140" height="90" aria-hidden="true">
+              <rect x="36" y="8" width="48" height="48" fill="none" stroke="#222" stroke-width="1.5"></rect>
+              <path d="M60 18c6 8 6 14 0 18-8 4-14-2-10-10 2-6 6-8 10-8z" fill="none" stroke="#222"></path>
+              <text x="60" y="74" text-anchor="middle" font-size="11" font-family="Source Sans 3, sans-serif" fill="#555">“fruit”</text>
+            </svg>
+          </div>
+          <div class="tz-do">Inside the system, apple is a pointer.</div>
+          <div class="tz-out"><span class="tz-big">Word</span> <span class="tz-note">to another word</span></div>
+        </div>
+        <div class="tz-panel">
+          <div class="tz-step">Ground</div>
+          <div class="tz-task">The same mark also sits next to an apple.</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#fff;">
+            <svg viewBox="0 0 120 80" width="140" height="90" aria-hidden="true">
+              <rect x="16" y="6" width="36" height="36" fill="none" stroke="#222" stroke-width="1.5"></rect>
+              <path d="M34 14c4 6 4 10 0 13" fill="none" stroke="#222"></path>
+              <path d="M78 28c6-8 16-6 18 2 4 2 8 8 6 16-2 12-10 20-16 20s-12-8-14-18c-2-10 2-16 6-20z" fill="#c6453a"></path>
+              <path d="M52 28c8 10 18 22 26 28" fill="none" stroke="#118659" stroke-dasharray="3 3"></path>
+            </svg>
+          </div>
+          <div class="tz-do">This is the arrow in the gif on the blog index.</div>
+          <div class="tz-out"><span class="tz-big">Apple</span> <span class="tz-note">not just the word</span></div>
+        </div>
+        <div class="tz-panel">
+          <div class="tz-step">Circle</div>
+          <div class="tz-task">Follow the definitions and you return.</div>
+          <div class="tz-vis" style="display:grid;place-items:center;background:#fff;font-family:Source Sans 3,sans-serif;font-size:14px;color:#222;">
+            apple → fruit → food → apple
+          </div>
+          <div class="tz-do">A dictionary can be perfect and still never leave the page.</div>
+          <div class="tz-out"><span class="tz-big">Loop</span> <span class="tz-note">no way out</span></div>
+        </div>
+      </div>
+    </figure>
+
+    <h2>Follow a word</h2>
+    <p>Pick a word. In <b>Symbols only</b>, each one hands you another phrase. In <b>Grounded</b>, <em>apple</em> also shows an apple. The other three stay phrases. Grounding here is not a picture for every word. It is one exit.</p>
+
+    <figure class="demo" data-lex>
+      <div class="switch" role="group" aria-label="How the word is linked">
+        <button type="button" data-mode="symbols" aria-pressed="true">Symbols only</button>
+        <button type="button" data-mode="ground" aria-pressed="false">Grounded</button>
+      </div>
+      <div class="switch" role="group" aria-label="Word" data-word-row></div>
+      <div class="pattern-layout">
+        <p class="trace" data-words-out></p>
+        <div class="trace" data-pic></div>
+      </div>
+      <figcaption><b>Figure 1.</b> The same four words, with and without a way out. The apple drawing is part of the page, not a photograph of an apple.</figcaption>
+    </figure>
+
+    <h2>Open the circle</h2>
+    <p>Four words name each other. Press the button and the apple node grows a second link, down to a small apple. The circle does not disappear. A grounded symbol can still mean <em>fruit</em>. It just does not mean only that.</p>
+
+    <figure class="demo" data-cycle>
+      <div class="fig-tools">
+        <button type="button" data-ground aria-pressed="false">Ground the apple</button>
+      </div>
+      <svg class="chart" viewBox="0 0 340 210" role="img" aria-label="Four words in a circle. When grounded, a dashed line leaves the apple node."></svg>
+      <p class="trace" data-cycle-note></p>
+      <figcaption><b>Figure 2.</b> Closing the dictionary is not the same as having nothing to point at. The button adds the second link, or takes it away.</figcaption>
+    </figure>
+
+    <h2>Where this sits</h2>
+    <p>The sketch on the blog index is the same idea in one drawing: a mark, a dashed arrow, an apple. The other drafts on that list are the Chinese room, a sentence that talks about itself, and Mary’s black-and-white room. They are neighbors of this one, not chapters of it.</p>
+    <p><a href="/blog/" target="_top">Back to the blog</a></p>
+  </d-article>
+
+  <script src="js/ground.js"></script>
+</body>
+</html>

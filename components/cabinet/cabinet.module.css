@@ -1,0 +1,146 @@
+.root {
+  --cab-warm: #b4532a;
+}
+
+:global([data-theme="dark"]) .root {
+  --cab-warm: #e2895c;
+}
+
+.intro {
+  max-width: var(--prose);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 2rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.filter {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-muted);
+  font: inherit;
+  cursor: pointer;
+  transition: all 0.15s var(--ease);
+}
+
+.filter:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filterOn {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--widget-bg);
+}
+
+.filterOn:hover {
+  color: var(--widget-bg);
+}
+
+.grid {
+  width: min(64rem, calc(100vw - 3rem));
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 2rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.item {
+  margin: 0;
+  min-width: 0;
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.canvasBox {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--widget-bg);
+  overflow: hidden;
+  line-height: 0;
+}
+
+.canvas {
+  display: block;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.7rem;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--ink-faint);
+  margin-right: 0.5rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.tag {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.blurb {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+.formula {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.archive {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sectionHead {
+  grid-column: 1 / -1;
+  margin: 1.5rem 0 -1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
