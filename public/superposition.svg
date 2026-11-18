@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200">
+  <rect width="320" height="200" fill="#faf8f3"/>
+  <circle cx="160" cy="100" r="70" fill="none" stroke="#8a877c" stroke-opacity=".45" stroke-dasharray="2 4"/>
+  <line x1="60" y1="100" x2="260" y2="100" stroke="#8a877c" stroke-opacity=".3"/>
+  <line x1="160" y1="20" x2="160" y2="180" stroke="#8a877c" stroke-opacity=".3"/>
+  <g stroke="#1a1a17" stroke-width="2" fill="none">
+    <line x1="160" y1="100" x2="160" y2="22"/>
+    <line x1="160" y1="100" x2="234.2" y2="75.9"/>
+    <line x1="160" y1="100" x2="205.8" y2="163.1"/>
+    <line x1="160" y1="100" x2="114.2" y2="163.1"/>
+    <line x1="160" y1="100" x2="85.8" y2="75.9"/>
+  </g>
+  <path d="M160 100 L160 70 A30 30 0 0 1 188.5 90.7 Z" fill="#b4532a" fill-opacity=".15"/>
+  <path d="M160 70 A30 30 0 0 1 188.5 90.7" fill="none" stroke="#b4532a" stroke-width="1.5"/>
+  <g fill="#1a1a17"><circle cx="160" cy="22" r="3.5"/><circle cx="234.2" cy="75.9" r="3.5"/><circle cx="205.8" cy="163.1" r="3.5"/><circle cx="114.2" cy="163.1" r="3.5"/><circle cx="85.8" cy="75.9" r="3.5"/></g>
+</svg>

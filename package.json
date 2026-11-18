@@ -13,6 +13,7 @@
     "export": "next build"
   },
   "dependencies": {
+    "framer-motion": "^14.9.1",
     "gray-matter": "^4.0.3",
     "katex": "^0.17.0",
     "next": "15.5.20",
